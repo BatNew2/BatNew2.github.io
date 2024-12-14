@@ -6,7 +6,6 @@ html {
 .item {
   overflow-x: hidden;
 }
-/* Base Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -134,7 +133,7 @@ button:hover {
   border: 1px solid #ddd;
   padding: 1rem;
   border-radius: 5px;
-  flex: 1 1 250px; /* Responsive grid items */
+  flex: 1 1 250px; 
 }
 
 form {
@@ -470,7 +469,7 @@ footer {
     display: none;
   }
 }
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .gallery-grid {
     padding: 1rem;
@@ -482,7 +481,7 @@ footer {
   }
 }
 
-/* Media Queries for Responsiveness */
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -550,7 +549,7 @@ footer {
   margin: auto;
 }
 
-/*navbar*/
+
 
 .header {
   width: 212px;
@@ -580,7 +579,7 @@ header {
   height: 100px;
   top: 0%;
   width: 100%;
-  padding: 0 2rem; /*top = 0; right = 2*/
+  padding: 0 2rem; 
   background-image:rgba(255,255,255,0);
   z-index: 10000;
   
@@ -618,13 +617,15 @@ header.scrolled{
 .right-container {
   display: flex;
   gap: 3rem;
-  transform: translateX(-90%);
-  transition:all cubic-bezier(0.075, 0.82, 0.165, 1) 0.4s;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.4s;
 }
 
-.right-container.scrolled{
-  width:auto;
-  
+.right-container.scrolled {
+  position: relative;
+  left: auto;
   transform: translateX(0);
 }
 
@@ -645,7 +646,7 @@ header.scrolled{
 }
 
 .navbar .links {
-  margin: auto;
+  margin: 0;
   display: flex;
   gap: 10rem;
   font-weight: 550;
@@ -660,7 +661,7 @@ header.scrolled{
   display: none;
 }
 
-/*DROPDOWN MENU*/
+
 .dropdown_menu {
   position: absolute;
   right: 2rem;
@@ -706,7 +707,6 @@ header.scrolled{
 }
 
 
-/*RESPONSIVE DESIGN*/
 @media (max-width: 722px) {
   .navbar .links {
     display: none;
@@ -744,9 +744,6 @@ header.scrolled{
   }
 }
 
-/* Renewable Energy Page Styles */
-
-
 
 .energy-grid {
   display: grid;
@@ -780,9 +777,8 @@ header.scrolled{
   margin-bottom: 1rem;
 }
 
-/* Interactive elements */
 .info-button {
-  background-color: #2c5f2d;  /* Updated to match your header color */
+  background-color: #2c5f2d;  
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -795,7 +791,6 @@ header.scrolled{
   background-color: #367937;
 }
 
-/* Modal styles */
 .modal {
   display: none;
   position: fixed;
@@ -804,7 +799,7 @@ header.scrolled{
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.7);
-  z-index: 10001; /* Higher than header */
+  z-index: 10001; 
 }
 
 .modal-content {
@@ -824,7 +819,6 @@ header.scrolled{
   cursor: pointer;
 }
 
-/* Animation classes */
 .fade-in {
   animation: fadeIn 0.5s ease-in;
 }
@@ -838,7 +832,6 @@ header.scrolled{
   }
 }
 
-/* Add to your existing media queries section */
 @media (max-width: 768px) {
   .energy-grid {
       grid-template-columns: 1fr;
@@ -846,16 +839,14 @@ header.scrolled{
   }
 }
 
-/* Fix content collision with navbar */
 .content {
-  margin-top: 80px; /* Match navbar height */
-  padding-top: 20px; /* Additional spacing */
+  margin-top: 80px; 
+  padding-top: 20px; 
 }
 
-/* Enhanced Renewable Energy Sections */
 .energy-section {
   padding: 6rem 8%;
-  scroll-margin-top: 80px; /* Prevents section from hiding under navbar when scrolling to anchor */
+  scroll-margin-top: 80px; 
 }
 
 .energy-section:nth-child(even) {
@@ -898,7 +889,6 @@ header.scrolled{
   margin-bottom: 0.5rem;
 }
 
-/* Other Renewables Section */
 .other-renewables {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -914,7 +904,6 @@ header.scrolled{
   text-align: center;
 }
 
-/* Enhanced Modal Styles */
 .modal-content {
   max-width: 800px;
   max-height: 80vh;
@@ -929,7 +918,7 @@ header.scrolled{
   margin-top: 2rem;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .energy-content {
       grid-template-columns: 1fr;
@@ -1134,7 +1123,7 @@ body{
 }
 .contactTitle{
   font-family:'Poppins', sans-serif;
-  color:white;
+  color:rgb(37, 37, 37);
   font-size:32px;
   font-weight:600;
   margin-left:auto;
@@ -1143,7 +1132,7 @@ body{
 .bghelper{
   height:70vh;
   width:60vw;
-  background: rgba( 255, 255, 255, 0.25 );
+  background: rgba(255, 255, 255, 0.965);
   box-shadow: 0 8px 16px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
@@ -1155,7 +1144,7 @@ body{
   align-items: center;
   flex-direction: column;
 }
-/*Contact page*/
+
 .showcase{
   background-image:url(img/conthome.jpg);
   background-size:cover;
@@ -1175,7 +1164,7 @@ body{
 }
 
 .glass-effect {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.17);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1214,10 +1203,10 @@ body{
 .input-field textarea {
   width: 100%;
   padding: 12px 40px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(96, 96, 96, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  color: #fff;
+  color: #000;
   font-size: 16px;
   transition: all 0.3s ease;
 }
@@ -1253,7 +1242,7 @@ body{
   transform: translateY(-2px);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .input-row {
     flex-direction: column;
@@ -1268,17 +1257,113 @@ body{
   }
 }
 
-/* Placeholder Color */
 ::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 
-/* Select Options Style */
 select option {
-  background: #2a2a2a;
-  color: #fff;
+  background: #ffffff;
+  color: #000;
+}
+.showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
 }
 
+.contact-form {
+  width: 100%;
+  max-width: 800px; 
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.bghelper {
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .navbar .links {
+        gap: 5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar .links {
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .right-container {
+        position: relative;
+        left: auto;
+        transform: none;
+    }
+    
+    .navbar .links {
+        display: none;
+    }
+}
+
+
+@media (max-width: 768px) {
+  .bghelper {
+    width: 95%;
+    padding: 20px 15px;
+    margin-top: 100px; 
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contactTitle {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .input-field input,
+  .input-field select,
+  .input-field textarea {
+    padding: 10px 35px;
+    font-size: 14px;
+  }
+
+
+  .navbar {
+    height: 80px;
+  }
+
+  header {
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bghelper {
+    width: 98%;
+    padding: 15px 10px;
+    margin-top: 80px; 
+  }
+
+  .glass-effect {
+    padding: 15px;
+  }
+
+  .contactTitle {
+    font-size: 20px;
+  }
+
+  
+  .navbar,
+  header {
+    height: 70px;
+  }
+}
 .left img,
 .stats-img {
   width: 100%;
