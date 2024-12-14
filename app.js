@@ -18,7 +18,7 @@ function showClick(sigmaparam) {
         slider.appendChild(items[0]);
       }
       item = sigmaparam;
-    checkAndEnlarge();
+    checkAndEnlarge();a
 }
 
 function checkAndEnlarge() {
