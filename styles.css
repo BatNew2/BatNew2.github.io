@@ -1278,3 +1278,33 @@ select option {
   background: #2a2a2a;
   color: #fff;
 }
+
+.left img,
+.stats-img {
+  width: 100%;
+  background: 0;
+  box-shadow: 0;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  scale: 1;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.left img:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  scale: 1.05;
+  border-radius: 10px;
+}
+
+.stats-img:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  scale: 1.05;
+  border-radius: 10px;
+}
