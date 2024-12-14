@@ -18,8 +18,6 @@ function showClick(sigmaparam) {
         slider.appendChild(items[0]);
       }
       item = sigmaparam;
-      
-      console.log(item);
     checkAndEnlarge();
 }
 
