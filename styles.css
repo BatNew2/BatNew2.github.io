@@ -1338,7 +1338,7 @@ select option {
     height: 80px;
   }
 }
-a
+
 @media (max-width: 480px) {
   .bghelper {
     width: 98%;
