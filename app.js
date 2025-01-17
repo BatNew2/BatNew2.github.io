@@ -13,7 +13,7 @@ function showSlider(move){
 }
 
 function showClick(sigmaparam) {
-    for (var i = 0; i < Math.abs(item % 4 - sigmaparam); i++) {
+    for (var i = 0; i < Math.abs((4-item) + sigmaparam); i++) {
         var  items = slider.getElementsByClassName('item');
         slider.appendChild(items[0]);
       }
