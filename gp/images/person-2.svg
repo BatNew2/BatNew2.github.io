@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-hidden="true">
+  <rect width="100%" height="100%" fill="#F2F8E9"/>
+  <circle cx="100" cy="80" r="48" fill="#9ACA6B" />
+  <text x="100" y="96" font-size="46" text-anchor="middle" fill="#fff" font-family="Poppins, sans-serif">SD</text>
+</svg>

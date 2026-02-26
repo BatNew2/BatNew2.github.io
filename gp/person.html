@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<body>
+<section class="navbar">
+  <ul>
+<li class="nav-item"><a class="nav-link cream px-2" href="products.html">Merch</a></li>
+<li><a href="products.html">Merch</a></li>
+<footer>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>First Team</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f6f7fb;
+}
+
+.team-section {
+  padding: 80px 10%;
+}
+
+.team-section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 70px;
+}
+
+/* GRID */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 100px;
+}
+
+/* ITEM */
+.member {
+  position: relative;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
+}
+
+.member.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FOTO BESAR */
+.member img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+/* RECTANGLE BELAKANG */
+.member .info {
+  margin-left: -40px;
+  padding: 25px 35px 25px 70px;
+  border: 2px solid #ddd;
+  border-radius: 16px;
+  background: transparent;
+  min-width: 260px;
+}
+
+/* TEXT */
+.member h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.member p {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* MEMBER KE-7 */
+.member.center {
+  grid-column: 1 / span 2;
+  justify-content: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .member.center {
+    grid-column: auto;
+  }
+
+  .member img {
+    width: 120px;
+    height: 120px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="team-section">
+  <h2>First Team</h2>
+
+  <div class="team-grid">
+
+    <div class="member">
+      <img src="foto1.jpg">
+      <div class="info">
+        <h3>Nama 1</h3>
+        <p>Role</p>
+      </div>
+    </div>
+
+    <div class="member">
+      <img src="foto2.jpg">
+      <div class="info">
+        <h3>Nama 2</h3>
+        <p>Role</p>
+      </div>
+    </div>
+
+    <div class="member">
+      <img src="foto3.jpg">
+      <div class="info">
+        <h3>Nama 3</h3>
+        <p>Role</p>
+      </div>
+    </div>
+
+    <div class="member">
+      <img src="foto4.jpg">
+      <div class="info">
+        <h3>Nama 4</h3>
+        <p>Role</p>
+      </div>
+    </div>
+
+    <div class="member">
+      <img src="foto5.jpg">
+      <div class="info">
+        <h3>Nama 5</h3>
+        <p>Role</p>
+      </div>
+    </div>
+
+    <div class="member">
+      <img src="foto6.jpg">
+      <div class="info">
+        <h3>Nama 6</h3>
+        <p>Role</p>
+      </div>
+    </div>
+
+    <!-- KE-7 TENGAH -->
+    <div class="member center">
+      <img src="foto7.jpg">
+      <div class="info">
+        <h3>Nama 7</h3>
+        <p>Role</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+const members = document.querySelectorAll('.member');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+members.forEach(m => observer.observe(m));
+</script>
+
+</body>
+</html>

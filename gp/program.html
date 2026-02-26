@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Program - Greenpact Society</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="maskot" href="gp_logo.png" />
+  </head>
+  <body>
+    <header class="w-100 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
+      <nav class="w-100 navbar navbar-expand-lg bg-body-tertiary navbar-custom bottom-border">
+        <div class="container-fluid">
+          <a href="main.html"><img style="height:6vh" src="images/image-removebg-preview (4).png" class="logo"></a>
+          <button
+            class="navbar-toggler d-flex d-lg-none flex-column justify-content-around collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="toggler-icon top-bar"></span>
+            <span class="toggler-icon middle-bar"></span>
+            <span class="toggler-icon bottom-bar"></span>
+          </button>
+
+          <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+              <li class="nav-item"><a class="nav-link cream px-2" href="main.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link cream px-2" aria-current="page" href="program.html">Program</a></li>
+              <li class="nav-item"><a class="nav-link cream px-2" href="/products.html">Merch</a></li>
+              <li class="nav-item"><a class="nav-link cream px-2" href="donate.html">Donate</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Programs Hero Section -->
+      <section class="programs-hero">
+        <div class="container">
+          <h1>Program Kami</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget facilisis enim nulla at sapien.</p>
+        </div>
+      </section>
+
+      <!-- Programs Cards Section -->
+      <section class="programs-section">
+        <div class="container">
+          <div class="programs-grid">
+            
+            <!-- Program Card 1 -->
+            <div class="program-card" onclick="openModal('modal1')">
+              <div class="program-card-image">
+                <img src="images/donate_pic.jpeg" alt="Environmental Education">
+                <div class="card-overlay">
+                  <span class="view-more">View Details</span>
+                </div>
+              </div>
+              <div class="program-card-content">
+                <h3>Environmental Education</h3>
+                <p class="card-subtitle">Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+
+            <!-- Program Card 2 -->
+            <div class="program-card" onclick="openModal('modal2')">
+              <div class="program-card-image">
+                <img src="images/donate_pic.jpeg" alt="Community Sustainability">
+                <div class="card-overlay">
+                  <span class="view-more">View Details</span>
+                </div>
+              </div>
+              <div class="program-card-content">
+                <h3>Community Sustainability</h3>
+                <p class="card-subtitle">Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+
+            <!-- Program Card 3 -->
+            <div class="program-card" onclick="openModal('modal3')">
+              <div class="program-card-image">
+                <img src="images/donate_pic.jpeg" alt="Green Innovation">
+                <div class="card-overlay">
+                  <span class="view-more">View Details</span>
+                </div>
+              </div>
+              <div class="program-card-content">
+                <h3>Green Innovation</h3>
+                <p class="card-subtitle">Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+
+            <!-- Program Card 4 -->
+            <div class="program-card" onclick="openModal('modal4')">
+              <div class="program-card-image">
+                <img src="images/donate_pic.jpeg" alt="Ecological Economics">
+                <div class="card-overlay">
+                  <span class="view-more">View Details</span>
+                </div>
+              </div>
+              <div class="program-card-content">
+                <h3>Ecological Economics</h3>
+                <p class="card-subtitle">Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+
+            <!-- Program Card 5 -->
+            <div class="program-card" onclick="openModal('modal5')">
+              <div class="program-card-image">
+                <img src="images/donate_pic.jpeg" alt="Reforestation">
+                <div class="card-overlay">
+                  <span class="view-more">View Details</span>
+                </div>
+              </div>
+              <div class="program-card-content">
+                <h3>Reforestation Projects</h3>
+                <p class="card-subtitle">Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+
+            <!-- Program Card 6 -->
+            <div class="program-card" onclick="openModal('modal6')">
+              <div class="program-card-image">
+                <img src="images/donate_pic.jpeg" alt="Social Welfare">
+                <div class="card-overlay">
+                  <span class="view-more">View Details</span>
+                </div>
+              </div>
+              <div class="program-card-content">
+                <h3>Social Welfare Initiatives</h3>
+                <p class="card-subtitle">Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal 1 -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal1')">&times;</span>
+          <div class="modal-main-image">
+            <img id="mainImg1" src="images/donate_pic.jpeg" alt="Environmental Education">
+          </div>
+          <div class="modal-thumbnail-carousel">
+            <div class="thumb-item active" onclick="changeMainImage('mainImg1', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 1">
+            </div>
+            <div class="thumb-item" onclick="changeMainImage('mainImg1', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 2">
+            </div>
+            <div class="thumb-item" onclick="changeMainImage('mainImg1', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 3">
+            </div>
+          </div>
+          <div class="modal-text">
+            <h2>Environmental Education</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi vel consectetur euismod, nisl nisi aliquam nunc, eget facilisis enim nulla at sapien.</p>
+              <h4>Key Highlights</h4>
+              <ul class="program-highlights">
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Consectetur adipiscing elit</li>
+                <li>Sed euismod urna eu tincidunt</li>
+                <li>Nisi nisl aliquam nunc</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="modal2" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal2')">&times;</span>
+          <div class="modal-main-image">
+            <img id="mainImg2" src="images/donate_pic.jpeg" alt="Community Sustainability">
+          </div>
+          <div class="modal-thumbnail-carousel">
+            <div class="thumb-item active" onclick="changeMainImage('mainImg2', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 1">
+            </div>
+            <div class="thumb-item" onclick="changeMainImage('mainImg2', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 2">
+            </div>
+            <div class="thumb-item" onclick="changeMainImage('mainImg2', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 3">
+            </div>
+          </div>
+          <div class="modal-text">
+            <h2>Community Sustainability</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi vel consectetur euismod, nisl nisi aliquam nunc, eget facilisis enim nulla at sapien.</p>
+            <h4>Key Highlights</h4>
+            <ul class="program-highlights">
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Consectetur adipiscing elit</li>
+              <li>Sed euismod urna eu tincidunt</li>
+              <li>Nisi nisl aliquam nunc</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 3 -->
+      <div id="modal3" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal3')">&times;</span>
+          <div class="modal-main-image">
+            <img id="mainImg3" src="images/donate_pic.jpeg" alt="Green Innovation">
+          </div>
+          <div class="modal-thumbnail-carousel">
+            <div class="thumb-item active" onclick="changeMainImage('mainImg3', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 1">
+            </div>
+            <div class="thumb-item" onclick="changeMainImage('mainImg3', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 2">
+            </div>
+            <div class="thumb-item" onclick="changeMainImage('mainImg3', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 3">
+            </div>
+          </div>
+          <div class="modal-text">
+            <h2>Green Innovation</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi vel consectetur euismod, nisl nisi aliquam nunc, eget facilisis enim nulla at sapien.</p>
+            <h4>Key Highlights</h4>
+            <ul class="program-highlights">
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Consectetur adipiscing elit</li>
+              <li>Sed euismod urna eu tincidunt</li>
+              <li>Nisi nisl aliquam nunc</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 4 -->
+      <div id="modal4" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal4')">&times;</span>
+          <div class="modal-main-image">
+            <img id="mainImg4" src="images/donate_pic.jpeg" alt="Ecological Economics">
+          </div>
+          <div class="modal-thumbnail-carousel">
+            <div class="thumb-item active" onclick="changeMainImage('mainImg4', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 1">
+            </div>
+            <div class="thumb-item" onclick="changeMainImage('mainImg4', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 2">
+            </div>
+            <div class="thumb-item" onclick="changeMainImage('mainImg4', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 3">
+            </div>
+          </div>
+          <div class="modal-text">
+            <h2>Ecological Economics</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi vel consectetur euismod, nisl nisi aliquam nunc, eget facilisis enim nulla at sapien.</p>
+            <h4>Key Highlights</h4>
+            <ul class="program-highlights">
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Consectetur adipiscing elit</li>
+              <li>Sed euismod urna eu tincidunt</li>
+              <li>Nisi nisl aliquam nunc</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Modal 5 -->
+      <div id="modal5" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal5')">&times;</span>
+          <div class="modal-main-image">
+            <img id="mainImg5" src="images/donate_pic.jpeg" alt="Reforestation">
+          </div>
+          <div class="modal-thumbnail-carousel">
+            <div class="thumb-item active" onclick="changeMainImage('mainImg5', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 1">
+            </div>
+            <div class="thumb-item" onclick="changeMainImage('mainImg5', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 2">
+            </div>
+            <div class="thumb-item" onclick="changeMainImage('mainImg5', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 3">
+            </div>
+          </div>
+          <div class="modal-text">
+            <h2>Reforestation Projects</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi vel consectetur euismod, nisl nisi aliquam nunc, eget facilisis enim nulla at sapien.</p>
+            <h4>Key Highlights</h4>
+            <ul class="program-highlights">
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Consectetur adipiscing elit</li>
+              <li>Sed euismod urna eu tincidunt</li>
+              <li>Nisi nisl aliquam nunc</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 6 -->
+      <div id="modal6" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal6')">&times;</span>
+          <div class="modal-main-image">
+            <img id="mainImg6" src="images/donate_pic.jpeg" alt="Social Welfare">
+          </div>
+          <div class="modal-thumbnail-carousel">
+            <div class="thumb-item active" onclick="changeMainImage('mainImg6', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 1">
+            </div>
+            <div class="thumb-item" onclick="changeMainImage('mainImg6', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 2">
+            </div>
+            <div class="thumb-item" onclick="changeMainImage('mainImg6', this)">
+              <img src="images/donate_pic.jpeg" alt="Thumb 3">
+            </div>
+          </div>
+          <div class="modal-text">
+            <h2>Social Welfare Initiatives</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi vel consectetur euismod, nisl nisi aliquam nunc, eget facilisis enim nulla at sapien.</p>
+            <h4>Key Highlights</h4>
+            <ul class="program-highlights">
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Consectetur adipiscing elit</li>
+              <li>Sed euismod urna eu tincidunt</li>
+              <li>Nisi nisl aliquam nunc</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Call to Action Section -->
+      <section class="programs-cta">
+        <div class="container">
+          <h2>Ikuti Kami</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi vel consectetur euismod, nisl nisi aliquam nunc, eget facilisis enim nulla at sapien.</p>
+          <div class="cta-buttons">
+            <a href="donate.html" class="btn btn-primary btn-lg">Donate</a>
+            <a href="main.html#visi-misi" class="btn btn-outline-primary btn-lg">Tentang Kami</a>
+          </div>
+        </div>
+      </section>
+    
+</main>
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <div class="footer-section">
+              <img src="gp_logo.png" alt="Greenpact Logo" class="footer-logo" />
+              <p class="footer-tagline">From us, to nature</p>
+            </div>
+          </div>
+          
+          <div class="col-12 col-md-4">
+            <div class="footer-section">
+              <h5>Quick Links</h5>
+              <ul class="footer-links">
+                <li><a href="main.html">Home</a></li>
+                <li><a href="program.html">Program</a></li>
+                <li><a href="/products">Merch</a></li>
+                <li><a href="donate.html">Donate</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-12 col-md-4">
+            <div class="footer-section">
+              <h5>Contact Us</h5>
+              <p class="footer-contact">Email: greenpact.society@gmail.com</p>
+              <p class="footer-contact">Phone: +62 811-9720-097</p>
+              <p class="footer-contact">Instagram: @greenpact.society</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; 2026 Greenpact Society. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <script>
+      function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        // Check scroll indicator on open
+        setTimeout(() => checkScrollIndicator(modalId), 100);
+        // Add scroll event listener for indicator
+        const modalContent = modal.querySelector('.modal-content');
+        if (modalContent) {
+          modalContent.addEventListener('scroll', () => checkScrollIndicator(modalId));
+        }
+      }
+
+      function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        // Remove scroll event listener
+        const modalContent = modal.querySelector('.modal-content');
+        if (modalContent) {
+          modalContent.removeEventListener('scroll', () => checkScrollIndicator(modalId));
+        }
+      }
+      // Show/hide scroll indicator if modal content is scrollable and not at bottom
+      function checkScrollIndicator(modalId) {
+        const modal = document.getElementById(modalId);
+        const modalContent = modal.querySelector('.modal-content');
+        const indicator = modalContent ? modalContent.querySelector('.modal-scroll-indicator') : null;
+        if (!modalContent || !indicator) return;
+        const visible = modalContent.clientHeight;
+        const total = modalContent.scrollHeight;
+        // Show if scrollable and not at bottom, with a lower threshold for more frequent appearance
+        if (total - visible > 30 && modalContent.scrollTop < (total - visible - 10)) {
+          indicator.style.display = 'flex';
+        } else {
+          indicator.style.display = 'none';
+        }
+      }
+
+      // Change main image when clicking thumbnail
+      function changeMainImage(mainImgId, thumbElement) {
+        const mainImg = document.getElementById(mainImgId);
+        const newSrc = thumbElement.querySelector('img').src;
+        mainImg.src = newSrc;
+
+        // Update active state
+        const container = thumbElement.parentElement;
+        container.querySelectorAll('.thumb-item').forEach(item => item.classList.remove('active'));
+        thumbElement.classList.add('active');
+      }
+
+      // Close modal when clicking outside of it
+      window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+          event.target.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      }
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          const modals = document.querySelectorAll('.modal');
+          modals.forEach(modal => {
+            if (modal.style.display === 'block') {
+              modal.style.display = 'none';
+              document.body.style.overflow = 'auto';
+            }
+          });
+        }
+      });
+
+      // On DOMContentLoaded, add scroll indicator inside modal-content for all modals
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.modal').forEach(modal => {
+          const modalContent = modal.querySelector('.modal-content');
+          if (modalContent && !modalContent.querySelector('.modal-scroll-indicator')) {
+            const indicator = document.createElement('div');
+            indicator.className = 'modal-scroll-indicator';
+            indicator.innerHTML = '<span class="arrow-down"></span>';
+            modalContent.appendChild(indicator);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
