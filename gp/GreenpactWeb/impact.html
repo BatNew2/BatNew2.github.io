@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impact | Greenpact</title>
+  <meta name="description" content="Greenpact events, projects and partnerships. Watch our representation film and explore the timeline of our work." />
+  <meta name="theme-color" content="#14301F" />
+  <link rel="icon" href="assets/images/logo-horse.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav is-solid" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="index.html" aria-label="Greenpact home">
+        <span class="nav__mark"><img src="assets/images/logo-horse.jpg" alt="Greenpact logo" /></span>
+        <span class="nav__name">Greenpact</span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="impact.html">Impact</a>
+        <a href="team.html">Team</a>
+        <a href="support.html">Support</a>
+        <a href="contact.html">Contact</a>
+        <a class="nav__cta" href="contact.html">Get Involved</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-label="Greenpact impact">
+      <div class="page-hero__media"><img src="assets/images/event-3.jpg" alt="" /><div class="page-hero__veil"></div></div>
+      <div class="page-hero__inner">
+        <p class="page-hero__eyebrow" data-reveal>Our work</p>
+        <h1 class="page-hero__title" data-reveal style="--delay:.05s">Impact <em>in the field</em>.</h1>
+        <p class="page-hero__lede" data-reveal style="--delay:.1s">Events, projects and partnerships, with the people who make them possible.</p>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="video section" id="film" aria-labelledby="video-h">
+      <div class="video__head">
+        <p class="kicker kicker--amber" data-reveal>In motion</p>
+        <h2 id="video-h" data-reveal style="--delay:.05s">See Greenpact in the field.</h2>
+      </div>
+      <figure class="video__frame" data-reveal style="--delay:.1s">
+        <!-- EDIT: drop the representation MP4 at assets/videos/representation.mp4 -->
+        <video id="repVideo" class="video__el" poster="assets/videos/poster.jpg" preload="none" playsinline controls>
+          <source src="assets/videos/representation.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <button class="video__play" id="videoPlay" aria-label="Play representation video">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <figcaption class="video__cap">Greenpact official representation film</figcaption>
+      </figure>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="impact section" id="impact" aria-labelledby="impact-h">
+      <div class="impact__head">
+        <p class="kicker kicker--light" data-reveal>The journey</p>
+        <h2 id="impact-h" data-reveal style="--delay:.05s">Impact &amp; Events</h2>
+        <p class="impact__sub" data-reveal style="--delay:.1s">Follow our wake. Select a milestone to open its story.</p>
+      </div>
+      <div class="impact__rail" id="impactRail" tabindex="0" aria-label="Events timeline, scroll horizontally">
+        <ol class="impact__track" id="impactTrack"></ol>
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section class="partners section" id="partners" aria-labelledby="partners-h">
+      <div class="partners__head">
+        <p class="kicker" data-reveal>Stronger together</p>
+        <h2 id="partners-h" data-reveal style="--delay:.05s">Our Partners</h2>
+        <p class="partners__sub" data-reveal style="--delay:.1s">Select a partner to learn about the collaboration.</p>
+      </div>
+      <div class="marquee" id="marquee" aria-label="Partner logos">
+        <div class="marquee__track" id="marqueeTrack"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="assets/images/logo-wood.png" alt="Greenpact" class="footer__logo" />
+        <p class="footer__tag">From Us, To Nature.</p>
+        <p class="footer__mission">A youth-driven movement for environmental sustainability, inspired by Laudato Si'.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <div><h4>Explore</h4><a href="about.html">About</a><a href="impact.html">Impact</a><a href="team.html">Team</a><a href="support.html">Support</a></div>
+        <div><h4>Connect</h4><a href="contact.html">Contact</a><a href="impact.html">Partners</a><a href="mailto:hello@greenpact.org">Email us</a></div>
+        <div><h4>Social</h4><a href="#" rel="noopener">Instagram</a><a href="#" rel="noopener">YouTube</a><a href="#" rel="noopener">LinkedIn</a></div>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span id="year"></span> Greenpact Society. All rights reserved.</p>
+      <p>Care for our common home.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL (events + partners) -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+      <button class="modal__close" data-close aria-label="Close">&times;</button>
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

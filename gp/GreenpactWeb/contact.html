@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Greenpact</title>
+  <meta name="description" content="Join, collaborate or learn more. Reach the Greenpact team, we read every message." />
+  <meta name="theme-color" content="#14301F" />
+  <link rel="icon" href="assets/images/logo-horse.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav is-solid" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="index.html" aria-label="Greenpact home">
+        <span class="nav__mark"><img src="assets/images/logo-horse.jpg" alt="Greenpact logo" /></span>
+        <span class="nav__name">Greenpact</span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="impact.html">Impact</a>
+        <a href="team.html">Team</a>
+        <a href="support.html">Support</a>
+        <a href="contact.html">Contact</a>
+        <a class="nav__cta" href="contact.html">Get Involved</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-label="Contact Greenpact">
+      <div class="page-hero__media"><img src="assets/images/event-hero.jpg" alt="" /><div class="page-hero__veil"></div></div>
+      <div class="page-hero__inner">
+        <p class="page-hero__eyebrow" data-reveal>Get involved</p>
+        <h1 class="page-hero__title" data-reveal style="--delay:.05s">Let's <em>talk</em>.</h1>
+        <p class="page-hero__lede" data-reveal style="--delay:.1s">Join, collaborate or just say hello. We read every message.</p>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact" aria-labelledby="contact-h">
+      <div class="contact__grid">
+        <div class="contact__intro">
+          <p class="kicker kicker--light" data-reveal>Reach us</p>
+          <h2 id="contact-h" data-reveal style="--delay:.05s">Let's build something that lasts.</h2>
+          <p class="contact__copy" data-reveal style="--delay:.1s">
+            Whether you want to join, collaborate or simply learn more, write to us.
+            We read every message.
+          </p>
+          <ul class="contact__meta" data-reveal style="--delay:.15s">
+            <li><span>Email</span><a href="mailto:hello@greenpact.org">hello@greenpact.org</a></li>
+            <li><span>Based in</span>Indonesia &middot; Working globally</li>
+          </ul>
+        </div>
+
+        <!-- EDIT: replace action with your Formspree endpoint, e.g. https://formspree.io/f/xxxxxxx -->
+        <form class="form" id="contactForm" action="https://formspree.io/f/your-id-here" method="POST" novalidate>
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required />
+            <small class="field__err" data-err></small>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required />
+            <small class="field__err" data-err></small>
+          </div>
+          <div class="field">
+            <label for="f-subject">Subject</label>
+            <input id="f-subject" name="subject" type="text" required />
+            <small class="field__err" data-err></small>
+          </div>
+          <div class="field">
+            <label for="f-message">Message</label>
+            <textarea id="f-message" name="message" rows="5" required></textarea>
+            <small class="field__err" data-err></small>
+          </div>
+          <button class="btn btn--amber form__submit" type="submit">Send message</button>
+          <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="assets/images/logo-wood.png" alt="Greenpact" class="footer__logo" />
+        <p class="footer__tag">From Us, To Nature.</p>
+        <p class="footer__mission">A youth-driven movement for environmental sustainability, inspired by Laudato Si'.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <div><h4>Explore</h4><a href="about.html">About</a><a href="impact.html">Impact</a><a href="team.html">Team</a><a href="support.html">Support</a></div>
+        <div><h4>Connect</h4><a href="contact.html">Contact</a><a href="impact.html">Partners</a><a href="mailto:hello@greenpact.org">Email us</a></div>
+        <div><h4>Social</h4><a href="#" rel="noopener">Instagram</a><a href="#" rel="noopener">YouTube</a><a href="#" rel="noopener">LinkedIn</a></div>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span id="year"></span> Greenpact Society. All rights reserved.</p>
+      <p>Care for our common home.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

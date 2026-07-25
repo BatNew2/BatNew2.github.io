@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support | Greenpact</title>
+  <meta name="description" content="Donate to fund Greenpact research, education and community projects, or shop merch that gives back." />
+  <meta name="theme-color" content="#14301F" />
+  <link rel="icon" href="assets/images/logo-horse.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav is-solid" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="index.html" aria-label="Greenpact home">
+        <span class="nav__mark"><img src="assets/images/logo-horse.jpg" alt="Greenpact logo" /></span>
+        <span class="nav__name">Greenpact</span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="impact.html">Impact</a>
+        <a href="team.html">Team</a>
+        <a href="support.html">Support</a>
+        <a href="contact.html">Contact</a>
+        <a class="nav__cta" href="contact.html">Get Involved</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-label="Support Greenpact">
+      <div class="page-hero__media"><img src="assets/images/event-2.jpg" alt="" /><div class="page-hero__veil"></div></div>
+      <div class="page-hero__inner">
+        <p class="page-hero__eyebrow" data-reveal>Support us</p>
+        <h1 class="page-hero__title" data-reveal style="--delay:.05s">Power the <em>movement</em>.</h1>
+        <p class="page-hero__lede" data-reveal style="--delay:.1s">Give what you can, or wear what we stand for. Every contribution turns into action.</p>
+      </div>
+    </section>
+
+    <!-- DONATE -->
+    <section class="donate section" id="donate" aria-labelledby="donate-h">
+      <div class="donate__head">
+        <p class="kicker" data-reveal>Donate</p>
+        <h2 id="donate-h" data-reveal style="--delay:.05s">Your gift becomes ground-level impact.</h2>
+        <p data-reveal style="--delay:.1s">Give any amount you like. Funds go directly into research, eco-education and community projects.</p>
+      </div>
+      <!-- EDIT: replace action with your Formspree (or donation provider) endpoint -->
+      <form class="form form--light donate__form" id="donateForm" action="https://formspree.io/f/your-id-here" method="POST" novalidate data-reveal style="--delay:.15s">
+        <div class="field">
+          <label for="d-amount">Donation amount (Rp)</label>
+          <div class="amount-chips" id="amountChips" role="group" aria-label="Quick amounts">
+            <button type="button" class="chip" data-amount="50000">50K</button>
+            <button type="button" class="chip" data-amount="100000">100K</button>
+            <button type="button" class="chip" data-amount="250000">250K</button>
+            <button type="button" class="chip" data-amount="500000">500K</button>
+          </div>
+          <input id="d-amount" name="amount" type="number" min="1000" step="1000" inputmode="numeric" placeholder="Enter an amount" required />
+          <small class="field__err" data-err></small>
+        </div>
+        <div class="field">
+          <label for="d-name">Name</label>
+          <input id="d-name" name="name" type="text" autocomplete="name" required />
+          <small class="field__err" data-err></small>
+        </div>
+        <div class="field">
+          <label for="d-email">Email</label>
+          <input id="d-email" name="email" type="email" autocomplete="email" required />
+          <small class="field__err" data-err></small>
+        </div>
+        <div class="field">
+          <label for="d-message">Message <span class="field__opt">(optional)</span></label>
+          <textarea id="d-message" name="message" rows="3"></textarea>
+        </div>
+        <button class="btn btn--amber form__submit" type="submit">Donate</button>
+        <p class="form__status" id="donateStatus" role="status" aria-live="polite"></p>
+      </form>
+      <p class="donate__note" data-reveal>Greenpact is a non-profit; gifts fund programs, not overhead. Prefer another method? <a href="contact.html">Reach out</a> and we will arrange it.</p>
+    </section>
+
+    <!-- MERCH -->
+    <section class="merch section" id="merch" aria-labelledby="merch-h">
+      <div class="merch__head">
+        <p class="kicker kicker--amber" data-reveal>Merch</p>
+        <h2 id="merch-h" data-reveal style="--delay:.05s">Wear the movement.</h2>
+        <p data-reveal style="--delay:.1s">Thoughtfully made goods. Proceeds go straight back into our work.</p>
+      </div>
+      <div class="merch__grid" id="merchGrid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="assets/images/logo-wood.png" alt="Greenpact" class="footer__logo" />
+        <p class="footer__tag">From Us, To Nature.</p>
+        <p class="footer__mission">A youth-driven movement for environmental sustainability, inspired by Laudato Si'.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <div><h4>Explore</h4><a href="about.html">About</a><a href="impact.html">Impact</a><a href="team.html">Team</a><a href="support.html">Support</a></div>
+        <div><h4>Connect</h4><a href="contact.html">Contact</a><a href="impact.html">Partners</a><a href="mailto:hello@greenpact.org">Email us</a></div>
+        <div><h4>Social</h4><a href="#" rel="noopener">Instagram</a><a href="#" rel="noopener">YouTube</a><a href="#" rel="noopener">LinkedIn</a></div>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span id="year"></span> Greenpact Society. All rights reserved.</p>
+      <p>Care for our common home.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

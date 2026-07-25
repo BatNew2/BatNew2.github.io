@@ -1872,3 +1872,75 @@ html {
     border-radius: 25px 0 0 25px;
   }
 }
+
+/* =========================================================
+   PRELOADER
+   Shared loading screen, matching GreenpactWeb/css/style.css.
+   Self-contained (no custom properties) so it works on every
+   page regardless of whether GreenpactWeb's stylesheet is
+   also loaded.
+   ========================================================= */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #f5f0e4;
+  display: grid;
+  place-items: center;
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.8s;
+}
+.preloader.is-done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.preloader__inner {
+  display: grid;
+  justify-items: center;
+  gap: 1.4rem;
+  text-align: center;
+}
+.preloader__logo {
+  width: clamp(90px, 16vw, 140px);
+  opacity: 0;
+  transform: scale(0.9);
+  animation: preloaderLogo 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.preloader__bar {
+  width: 180px;
+  height: 3px;
+  background: rgba(26, 28, 23, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.preloader__bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #c8862e;
+  animation: preloaderBar 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.preloader__word {
+  font-style: italic;
+  color: #234534;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  animation: preloaderWord 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+}
+@keyframes preloaderLogo {
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes preloaderBar {
+  to { width: 100%; }
+}
+@keyframes preloaderWord {
+  to { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .preloader__logo, .preloader__bar span, .preloader__word {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    width: 100%;
+  }
+}

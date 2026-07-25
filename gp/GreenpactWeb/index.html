@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greenpact | From Us, To Nature</title>
+  <meta name="description" content="Greenpact is a youth-driven organization for environmental sustainability, innovation and real-world impact, inspired by the spirit of Laudato Si'." />
+  <meta name="theme-color" content="#14301F" />
+
+  <meta property="og:title" content="Greenpact | From Us, To Nature" />
+  <meta property="og:description" content="A youth-driven movement turning environmental care into measurable impact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/event-hero.jpg" />
+  <link rel="icon" href="assets/images/logo-horse.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- PRELOADER (home only) -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <img class="preloader__logo" src="assets/images/logo-wood.png" alt="" />
+      <div class="preloader__bar"><span></span></div>
+      <p class="preloader__word">From Us, To Nature</p>
+    </div>
+  </div>
+
+  <!-- NAV (shared) -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="index.html" aria-label="Greenpact home">
+        <span class="nav__mark"><img src="assets/images/logo-horse.jpg" alt="Greenpact logo" /></span>
+        <span class="nav__name">Greenpact</span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="impact.html">Impact</a>
+        <a href="team.html">Team</a>
+        <a href="support.html">Support</a>
+        <a href="contact.html">Contact</a>
+        <a class="nav__cta" href="contact.html">Get Involved</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Introduction">
+      <div class="hero__media">
+        <img src="assets/images/event-hero.jpg" alt="" />
+        <div class="hero__veil"></div>
+      </div>
+      <div class="hero__content">
+        <p class="hero__eyebrow" data-reveal>Greenpact Society &middot; Laudato Si'</p>
+        <h1 class="hero__title">
+          <span data-reveal>From Us,</span>
+          <span class="hero__title-accent" data-reveal style="--delay:.08s">To Nature</span>
+        </h1>
+        <p class="hero__lede" data-reveal style="--delay:.16s">
+          A youth-driven movement turning environmental care into research, innovation
+          and measurable impact, one community at a time.
+        </p>
+        <div class="hero__actions" data-reveal style="--delay:.24s">
+          <a class="btn btn--amber" href="contact.html">Become a Member</a>
+          <a class="btn btn--ghost" href="impact.html">See Our Impact</a>
+        </div>
+      </div>
+      <a class="hero__scroll" href="#about-teaser" aria-label="Scroll to content">
+        <span class="hero__scroll-dot"></span>
+        <span class="hero__scroll-label">Scroll</span>
+      </a>
+    </section>
+
+    <!-- ABOUT TEASER -->
+    <section class="about section" id="about-teaser" aria-labelledby="abt-h">
+      <div class="about__grid">
+        <div class="about__intro">
+          <p class="kicker" data-reveal>Who we are</p>
+          <h2 id="abt-h" class="about__title" data-reveal style="--delay:.05s">
+            We study what we love, then act on what we learn.
+          </h2>
+          <a class="section__link" href="about.html" data-reveal style="--delay:.1s">Read our full story &rarr;</a>
+        </div>
+        <div class="about__lead" data-reveal style="--delay:.1s">
+          <img class="about__loupe" src="assets/images/loupe.png" alt="" />
+          <p>
+            Greenpact is students, researchers and creators working at the intersection of
+            <strong>ecology, innovation and community</strong>, inspired by the conviction that
+            caring for our common home is a practice, not a slogan.
+          </p>
+        </div>
+        <div class="about__pillars">
+          <article class="pillar" data-reveal>
+            <span class="pillar__no">01</span>
+            <h3>What we do</h3>
+            <p>Field research, eco-education campaigns and community projects that put sustainability into the hands of young people.</p>
+          </article>
+          <article class="pillar" data-reveal style="--delay:.08s">
+            <span class="pillar__no">02</span>
+            <h3>How we work</h3>
+            <p>Evidence first. Every campaign starts with observation and ends with impact we can measure and share openly.</p>
+          </article>
+          <article class="pillar" data-reveal style="--delay:.16s">
+            <span class="pillar__no">03</span>
+            <h3>Why we exist</h3>
+            <p>Inspired by Laudato Si', we believe the next generation should not just inherit the planet. They should help heal it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GREENFACTS STRIP -->
+    <section class="facts section" id="facts" aria-labelledby="facts-h">
+      <div class="facts__head">
+        <p class="kicker kicker--amber" data-reveal>GreenFacts</p>
+        <h2 id="facts-h" data-reveal style="--delay:.05s">Small numbers, large consequences.</h2>
+        <p class="facts__sub" data-reveal style="--delay:.1s">Hover a card to flip it. Tap on mobile.</p>
+      </div>
+      <div class="facts__stats" id="factsStats"></div>
+      <div class="facts__cards" id="factsCards" data-limit="3"></div>
+    </section>
+
+    <!-- IMPACT PREVIEW -->
+    <section class="impact-preview section" aria-labelledby="ip-h">
+      <div class="impact-preview__head">
+        <div>
+          <p class="kicker kicker--light" data-reveal>The journey</p>
+          <h2 id="ip-h" data-reveal style="--delay:.05s">Impact &amp; Events</h2>
+        </div>
+        <a class="section__link" href="impact.html" data-reveal>View the full timeline &rarr;</a>
+      </div>
+      <div class="impact-preview__grid" id="impactPreview" data-limit="3"></div>
+    </section>
+
+    <!-- PARTNERS TEASER -->
+    <section class="partners section" id="partners" aria-labelledby="partners-h">
+      <div class="partners__head">
+        <p class="kicker" data-reveal>Stronger together</p>
+        <h2 id="partners-h" data-reveal style="--delay:.05s">Our Partners</h2>
+        <p class="partners__sub" data-reveal style="--delay:.1s">Organizations building lasting impact alongside us.</p>
+      </div>
+      <div class="marquee" id="marquee" aria-label="Partner logos">
+        <div class="marquee__track" id="marqueeTrack"></div>
+      </div>
+    </section>
+
+    <!-- SUPPORT TEASER -->
+    <section class="support-teaser section" aria-labelledby="sup-h">
+      <div class="impact-preview__head" style="margin-bottom:0">
+        <div>
+          <p class="kicker" data-reveal>Fuel the mission</p>
+          <h2 id="sup-h" class="about__title" data-reveal style="--delay:.05s">Support Greenpact</h2>
+        </div>
+        <a class="section__link" href="support.html" data-reveal>Donate or shop merch &rarr;</a>
+      </div>
+      <div class="support-teaser__grid" style="margin-top:clamp(2rem,4vw,3rem)">
+        <a class="support-tile support-tile--donate" href="support.html" data-reveal>
+          <p class="support-tile__kicker">Donate</p>
+          <h3>Every gift plants real impact.</h3>
+          <p>Fund research, education and community projects. Give what you can.</p>
+          <span class="btn btn--amber">Donate now</span>
+        </a>
+        <a class="support-tile support-tile--merch" href="support.html" data-reveal style="--delay:.08s">
+          <p class="support-tile__kicker">Merch</p>
+          <h3>Wear your support.</h3>
+          <p>Totes, tees and more. Proceeds go straight back into our work.</p>
+          <span class="btn btn--amber">Shop merch</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band section" aria-labelledby="cta-h">
+      <div class="cta-band__inner">
+        <p class="kicker kicker--light" data-reveal>Get involved</p>
+        <h2 id="cta-h" data-reveal style="--delay:.05s">Join the <em>movement</em>.</h2>
+        <p data-reveal style="--delay:.1s">Join as a member, collaborate as a partner, or simply learn more. We read every message.</p>
+        <a class="btn btn--amber" href="contact.html" data-reveal style="--delay:.15s">Get in touch</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (shared) -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="assets/images/logo-wood.png" alt="Greenpact" class="footer__logo" />
+        <p class="footer__tag">From Us, To Nature.</p>
+        <p class="footer__mission">A youth-driven movement for environmental sustainability, inspired by Laudato Si'.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <div>
+          <h4>Explore</h4>
+          <a href="about.html">About</a>
+          <a href="impact.html">Impact</a>
+          <a href="team.html">Team</a>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <a href="contact.html">Contact</a>
+          <a href="impact.html">Partners</a>
+          <a href="mailto:hello@greenpact.org">Email us</a>
+        </div>
+        <div>
+          <h4>Social</h4>
+          <a href="#" rel="noopener">Instagram</a>
+          <a href="#" rel="noopener">YouTube</a>
+          <a href="#" rel="noopener">LinkedIn</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span id="year"></span> Greenpact Society. All rights reserved.</p>
+      <p>Care for our common home.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

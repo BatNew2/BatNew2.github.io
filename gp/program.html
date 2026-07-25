@@ -14,8 +14,27 @@
     <link rel="icon" type="maskot" href="gp_logo.png" />
   </head>
   <body>
-    <header class="w-100 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
-      <nav class="w-100 navbar navbar-expand-lg bg-body-tertiary navbar-custom bottom-border">
+    <div class="preloader" id="preloader" aria-hidden="true">
+      <div class="preloader__inner">
+        <img class="preloader__logo" src="GreenpactWeb/assets/images/logo-wood.png" alt="" />
+        <div class="preloader__bar"><span></span></div>
+        <p class="preloader__word">From us, to nature</p>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var preloader = document.getElementById('preloader');
+        if (!preloader) return;
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var dismiss = function () { preloader.classList.add('is-done'); };
+        if (reduceMotion) { dismiss(); return; }
+        window.addEventListener('load', function () { setTimeout(dismiss, 1200); });
+        setTimeout(dismiss, 4000); // safety fallback if load never fires
+      })();
+    </script>
+
+    <header class="w-100 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between mb-4">
+      <nav class="w-100 navbar navbar-expand-lg  navbar-custom bottom-border">
         <div class="container-fluid">
           <a href="main.html"><img style="height:6vh" src="images/image-removebg-preview (4).png" class="logo"></a>
           <button
@@ -38,12 +57,12 @@
               <li class="nav-item"><a class="nav-link cream px-2" aria-current="page" href="program.html">Program</a></li>
               <li class="nav-item"><a class="nav-link cream px-2" href="products.html">Merch</a></li>
               <li class="nav-item"><a class="nav-link cream px-2" href="donate.html">Donate</a></li>
+              <li class="nav-item"><a class="nav-link cream px-2" href="team.html">Team</a></li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
-
     <main>
       <!-- Programs Hero Section -->
       <section class="programs-hero">
@@ -61,7 +80,7 @@
             <!-- Program Card 1 -->
             <div class="program-card" onclick="openModal('modal1')">
               <div class="program-card-image">
-                <img src="images/proker/Gun 1.jpeg" fetchpriority="high" "Environmental Education">
+                <img src="images/proker/Gun 1.jpeg" alt="Environmental Education" fetchpriority="high" decoding="async">
                 <div class="card-overlay">
                   <span class="view-more">View Details</span>
                 </div>
@@ -75,7 +94,7 @@
             <!-- Program Card 2 -->
             <div class="program-card" onclick="openModal('modal2')">
               <div class="program-card-image">
-                <img src="images/proker/Any 1.jpeg" fetchpriority="high" alt="Community Sustainability">
+                <img src="images/proker/Any 1.jpeg" alt="Community Sustainability" decoding="async">
                 <div class="card-overlay">
                   <span class="view-more">View Details</span>
                 </div>
@@ -89,7 +108,7 @@
             <!-- Program Card 3 -->
             <div class="program-card" onclick="openModal('modal3')">
               <div class="program-card-image">
-                <img src="images/proker/Ams 1.jpeg" fetchpriority="high" alt="Green Innovation">
+                <img src="images/proker/Ams 1.jpeg" alt="Green Innovation" decoding="async">
                 <div class="card-overlay">
                   <span class="view-more">View Details</span>
                 </div>
@@ -103,7 +122,7 @@
             <!-- Program Card 4 -->
             <div class="program-card" onclick="openModal('modal4')">
               <div class="program-card-image">
-                <img src="images/proker/Sem 1.jpg" fetchpriority="high" alt="Ecological Economics">
+                <img src="images/proker/Sem 1.jpg" alt="Ecological Economics" decoding="async">
                 <div class="card-overlay">
                   <span class="view-more">View Details</span>
                 </div>
@@ -117,7 +136,7 @@
             <!-- Program Card 5 -->
             <div class="program-card" onclick="openModal('modal5')">
               <div class="program-card-image">
-                <img src="images/proker/Pab 1.jpeg" alt="Reforestation">
+                <img src="images/proker/Pab 1.jpeg" alt="Reforestation" decoding="async">
                 <div class="card-overlay">
                   <span class="view-more">View Details</span>
                 </div>
@@ -131,7 +150,7 @@
             <!-- Program Card 6 -->
             <div class="program-card" onclick="openModal('modal6')">
               <div class="program-card-image">
-                <img src="images/proker/Eras 1.jpg" alt="Social Welfare" fetchpriority="high">
+                <img src="images/proker/Eras 1.jpg" alt="Social Welfare" decoding="async">
                 <div class="card-overlay">
                   <span class="view-more">View Details</span>
                 </div>
@@ -151,17 +170,17 @@
         <div class="modal-content">
           <span class="close" onclick="closeModal('modal1')">&times;</span>
           <div class="modal-main-image">
-            <img id="mainImg1" src="images/proker/Gun 1.jpeg" alt="Environmental Education">
+            <img id="mainImg1" src="images/proker/Gun 1.jpeg" alt="Environmental Education" loading="lazy" decoding="async">
           </div>
           <div class="modal-thumbnail-carousel">
             <div class="thumb-item active" onclick="changeMainImage('mainImg1', this)">
-              <img src="images/proker/Gun 1.jpeg" alt="Thumb 1">
+              <img src="images/proker/Gun 1.jpeg" alt="Thumb 1" loading="lazy" decoding="async">
             </div>
             <div class="thumb-item" onclick="changeMainImage('mainImg1', this)">
-              <img src="images/proker/Gun 2.jpeg" alt="Thumb 2">
+              <img src="images/proker/Gun 2.jpeg" alt="Thumb 2" loading="lazy" decoding="async">
             </div>
             <div class="thumb-item" onclick="changeMainImage('mainImg1', this)">
-              <img src="images/proker/Gun 3.jpeg" alt="Thumb 3">
+              <img src="images/proker/Gun 3.jpeg" alt="Thumb 3" loading="lazy" decoding="async">
             </div>
           </div>
           <div class="modal-text">
@@ -181,17 +200,17 @@
         <div class="modal-content">
           <span class="close" onclick="closeModal('modal2')">&times;</span>
           <div class="modal-main-image">
-            <img id="mainImg2" src="images/proker/Any 1.jpeg" alt="Community Sustainability">
+            <img id="mainImg2" src="images/proker/Any 1.jpeg" alt="Community Sustainability" loading="lazy" decoding="async">
           </div>
           <div class="modal-thumbnail-carousel">
             <div class="thumb-item active" onclick="changeMainImage('mainImg2', this)">
-              <img src="images/proker/Any 1.jpeg" alt="Thumb 1">
+              <img src="images/proker/Any 1.jpeg" alt="Thumb 1" loading="lazy" decoding="async">
             </div>
             <div class="thumb-item" onclick="changeMainImage('mainImg2', this)">
-              <img src="images/proker/Any 2.jpeg" alt="Thumb 2">
+              <img src="images/proker/Any 2.jpeg" alt="Thumb 2" loading="lazy" decoding="async">
             </div>
             <div class="thumb-item" onclick="changeMainImage('mainImg2', this)">
-              <img src="images/proker/Any 3 .jpeg" alt="Thumb 3">
+              <img src="images/proker/Any 3 .jpeg" alt="Thumb 3" loading="lazy" decoding="async">
             </div>
           </div>
           <div class="modal-text">
@@ -213,17 +232,17 @@
         <div class="modal-content">
           <span class="close" onclick="closeModal('modal3')">&times;</span>
           <div class="modal-main-image">
-            <img id="mainImg3" src="images/proker/Ams 1.jpeg" alt="Green Innovation">
+            <img id="mainImg3" src="images/proker/Ams 1.jpeg" alt="Green Innovation" loading="lazy" decoding="async">
           </div>
           <div class="modal-thumbnail-carousel">
             <div class="thumb-item active" onclick="changeMainImage('mainImg3', this)">
-              <img src="images/proker/Ams 1.jpeg" alt="Thumb 1">
+              <img src="images/proker/Ams 1.jpeg" alt="Thumb 1" loading="lazy" decoding="async">
             </div>
             <div class="thumb-item" onclick="changeMainImage('mainImg3', this)">
-              <img src="images/proker/Ams 2.jpeg" alt="Thumb 2">
+              <img src="images/proker/Ams 2.jpeg" alt="Thumb 2" loading="lazy" decoding="async">
             </div>
             <div class="thumb-item" onclick="changeMainImage('mainImg3', this)">
-              <img src="images/proker/Ams 3.jpeg" alt="Thumb 3">
+              <img src="images/proker/Ams 3.jpeg" alt="Thumb 3" loading="lazy" decoding="async">
             </div>
           </div>
           <div class="modal-text">
@@ -244,17 +263,17 @@
         <div class="modal-content">
           <span class="close" onclick="closeModal('modal4')">&times;</span>
           <div class="modal-main-image">
-            <img id="mainImg4" src="images/proker/Sem 1.jpg" alt="Ecological Economics">
+            <img id="mainImg4" src="images/proker/Sem 1.jpg" alt="Ecological Economics" loading="lazy" decoding="async">
           </div>
           <div class="modal-thumbnail-carousel">
             <div class="thumb-item active" onclick="changeMainImage('mainImg4', this)">
-              <img src="images/proker/Sem 1.jpg" alt="Thumb 1">
+              <img src="images/proker/Sem 1.jpg" alt="Thumb 1" loading="lazy" decoding="async">
             </div>
             <div class="thumb-item" onclick="changeMainImage('mainImg4', this)">
-              <img src="images/proker/Sem 2.jpg" alt="Thumb 2">
+              <img src="images/proker/Sem 2.jpg" alt="Thumb 2" loading="lazy" decoding="async">
             </div>
             <div class="thumb-item" onclick="changeMainImage('mainImg4', this)">
-              <img src="images/proker/Sem 3.jpg" alt="Thumb 3">
+              <img src="images/proker/Sem 3.jpg" alt="Thumb 3" loading="lazy" decoding="async">
             </div>
           </div>
           <div class="modal-text">
@@ -276,17 +295,17 @@
         <div class="modal-content">
           <span class="close" onclick="closeModal('modal5')">&times;</span>
           <div class="modal-main-image">
-            <img id="mainImg5" src="images/proker/Pab 1.jpeg" alt="Reforestation">
+            <img id="mainImg5" src="images/proker/Pab 1.jpeg" alt="Reforestation" loading="lazy" decoding="async">
           </div>
           <div class="modal-thumbnail-carousel">
             <div class="thumb-item active" onclick="changeMainImage('mainImg5', this)">
-              <img src="images/proker/Pab 1.jpeg" alt="Thumb 1">
+              <img src="images/proker/Pab 1.jpeg" alt="Thumb 1" loading="lazy" decoding="async">
             </div>
             <div class="thumb-item" onclick="changeMainImage('mainImg5', this)">
-              <img src="images/proker/Pab 2.jpeg" alt="Thumb 2">
+              <img src="images/proker/Pab 2.jpeg" alt="Thumb 2" loading="lazy" decoding="async">
             </div>
             <div class="thumb-item" onclick="changeMainImage('mainImg5', this)">
-              <img src="images/proker/Pab 3 jpeg.jpg" alt="Thumb 3">
+              <img src="images/proker/Pab 3 jpeg.jpg" alt="Thumb 3" loading="lazy" decoding="async">
             </div>
           </div>
           <div class="modal-text">
@@ -307,17 +326,17 @@
         <div class="modal-content">
           <span class="close" onclick="closeModal('modal6')">&times;</span>
           <div class="modal-main-image">
-            <img id="mainImg6" src="images/proker/Eras 1.jpg" alt="Social Welfare">
+            <img id="mainImg6" src="images/proker/Eras 1.jpg" alt="Social Welfare" loading="lazy" decoding="async">
           </div>
           <div class="modal-thumbnail-carousel">
             <div class="thumb-item active" onclick="changeMainImage('mainImg6', this)">
-              <img src="images/proker/Eras 1.jpg" alt="Thumb 1">
+              <img src="images/proker/Eras 1.jpg" alt="Thumb 1" loading="lazy" decoding="async">
             </div>
             <div class="thumb-item" onclick="changeMainImage('mainImg6', this)">
-              <img src="images/proker/Eras 2.jpg" alt="Thumb 2">
+              <img src="images/proker/Eras 2.jpg" alt="Thumb 2" loading="lazy" decoding="async">
             </div>
             <div class="thumb-item" onclick="changeMainImage('mainImg6', this)">
-              <img src="images/proker/Eras 3.jpg" alt="Thumb 3">
+              <img src="images/proker/Eras 3.jpg" alt="Thumb 3" loading="lazy" decoding="async">
             </div>
           </div>
           <div class="modal-text">
@@ -472,6 +491,33 @@
           }
         });
       });
+    </script>
+
+    <script>
+      (function () {
+        const header = document.querySelector('header');
+        const navbar = document.querySelector('.navbar');
+        const rightContainer = document.querySelector('.right-container');
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const dropdown = document.querySelector('.dropdown_menu');
+        if (!header || !navbar || !rightContainer || !toggleBtn || !dropdown) return;
+
+        const onScroll = () => {
+          const scrolled = window.scrollY > 50;
+          header.classList.toggle('scrolled', scrolled);
+          navbar.classList.toggle('scrolled', scrolled);
+          rightContainer.classList.toggle('scrolled', scrolled);
+        };
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+
+        toggleBtn.addEventListener('click', () => {
+          dropdown.classList.toggle('open');
+        });
+        dropdown.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+          dropdown.classList.remove('open');
+        }));
+      })();
     </script>
   </body>
 </html>

@@ -9,12 +9,14 @@
     border: none;
 }
 
-.navbar-expand-lg .navbar-toggler {
-    display: none;
-}
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
 
-.navbar-expand-lg .collapse {
-    display: flex !important;
+    .navbar-expand-lg .collapse {
+        display: flex !important;
+    }
 }
 
 .btn-close-champ {

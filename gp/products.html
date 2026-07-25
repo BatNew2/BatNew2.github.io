@@ -15,8 +15,27 @@
     <link rel="icon" type="maskot" href="gp_logo.png" />
   </head>
   <body>
-    <header class="w-100 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
-      <nav class="w-100 navbar navbar-expand-lg bg-body-tertiary navbar-custom bottom-border">
+    <div class="preloader" id="preloader" aria-hidden="true">
+      <div class="preloader__inner">
+        <img class="preloader__logo" src="GreenpactWeb/assets/images/logo-wood.png" alt="" />
+        <div class="preloader__bar"><span></span></div>
+        <p class="preloader__word">From us, to nature</p>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var preloader = document.getElementById('preloader');
+        if (!preloader) return;
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var dismiss = function () { preloader.classList.add('is-done'); };
+        if (reduceMotion) { dismiss(); return; }
+        window.addEventListener('load', function () { setTimeout(dismiss, 1200); });
+        setTimeout(dismiss, 4000); // safety fallback if load never fires
+      })();
+    </script>
+
+    <header class="w-100 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between mb-4">
+      <nav class="w-100 navbar navbar-expand-lg  navbar-custom bottom-border">
         <div class="container-fluid">
           <a href="main.html"><img style="height:6vh" src="images/image-removebg-preview (4).png" class="logo"></a>
           <button
@@ -37,14 +56,15 @@
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
               <li class="nav-item"><a class="nav-link cream px-2" href="main.html">Home</a></li>
               <li class="nav-item"><a class="nav-link cream px-2" href="program.html">Program</a></li>
-              <li class="nav-item"><a class="nav-link cream px-2 active" aria-current="page" href="products.html">Merch</a></li>
+              <li class="nav-item"><a class="nav-link cream px-2"  aria-current="page" href="products.html">Merch</a></li>
               <li class="nav-item"><a class="nav-link cream px-2" href="donate.html">Donate</a></li>
+              <li class="nav-item"><a class="nav-link cream px-2" href="team.html">Team</a></li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
-<main>
+<main style="padding-top: 90px;">
   <br>
     <div
       class="body-div"
@@ -461,5 +481,32 @@
   </div>
 </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+      (function () {
+        const header = document.querySelector('header');
+        const navbar = document.querySelector('.navbar');
+        const rightContainer = document.querySelector('.right-container');
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const dropdown = document.querySelector('.dropdown_menu');
+        if (!header || !navbar || !rightContainer || !toggleBtn || !dropdown) return;
+
+        const onScroll = () => {
+          const scrolled = window.scrollY > 50;
+          header.classList.toggle('scrolled', scrolled);
+          navbar.classList.toggle('scrolled', scrolled);
+          rightContainer.classList.toggle('scrolled', scrolled);
+        };
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+
+        toggleBtn.addEventListener('click', () => {
+          dropdown.classList.toggle('open');
+        });
+        dropdown.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+          dropdown.classList.remove('open');
+        }));
+      })();
+    </script>
   </body>
 </html>
