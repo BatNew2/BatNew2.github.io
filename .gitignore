@@ -1,0 +1,4 @@
+# Full-resolution photo originals. Kept locally as the source for
+# tools/optimize-team-images.py; the site only ever serves the downscaled
+# copies in gp/images/team/ and gp/images/team/opt/.
+gp/images/_source/
