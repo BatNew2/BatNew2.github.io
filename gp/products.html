@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="merch.css" />
     <link rel="icon" type="maskot" href="gp_logo.png" />
   </head>
-  <body>
+  <body class="is-locked">
     <div class="preloader" id="preloader" aria-hidden="true">
       <div class="preloader__inner">
         <img class="preloader__logo" src="GreenpactWeb/assets/images/logo-wood.png" alt="" />
@@ -64,7 +64,22 @@
         </div>
       </nav>
     </header>
-<main style="padding-top: 90px;">
+
+    <!-- COMING SOON CURTAIN — sits under the navbar (z-index 1100) so the nav
+         stays usable, and blocks everything else on the page. -->
+    <div class="coming-soon" role="dialog" aria-modal="true" aria-labelledby="comingSoonTitle">
+      <div class="coming-soon__inner">
+        <img class="coming-soon__logo" src="gp_logo.png" alt="" />
+        <p class="coming-soon__kicker">Merch</p>
+        <h1 class="coming-soon__title" id="comingSoonTitle">Coming Soon</h1>
+        <p class="coming-soon__text">
+          Merch Greenpact sedang kami siapkan. Nantikan peluncurannya!
+        </p>
+        <a class="coming-soon__btn" href="main.html">Kembali ke Beranda</a>
+      </div>
+    </div>
+
+<main style="padding-top: 90px;" inert>
   <br>
     <div
       class="body-div"
@@ -443,7 +458,7 @@
       </div>
 </main>
 <br>
-<footer class="footer">
+<footer class="footer" inert>
   <div class="container">
     <div class="row g-4">
       <div class="col-12 col-md-4">

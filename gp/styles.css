@@ -984,11 +984,23 @@ html {
   align-self: flex-start;
 }
 
-.btn-donate:hover {
+.btn-donate:hover:not(:disabled) {
   background-color: #8a1732;
   color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(163,28,60,0.3);
+}
+
+.btn-donate:disabled {
+  background-color: #a31c3c;
+  color: #ffffff;
+  opacity: 0.45;
+  /* Bootstrap kills pointer events on :disabled; restore them so the
+     not-allowed cursor shows (a disabled button still can't be clicked). */
+  pointer-events: auto;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 @media (max-width: 767.98px) {

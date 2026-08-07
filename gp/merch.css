@@ -1,3 +1,83 @@
+/* =========================================================
+   COMING SOON CURTAIN
+   Locks the merch page. z-index 1000 keeps it below .navbar
+   (1100) and its mobile dropdown, so only the nav stays live.
+   The page itself also carries `inert`, which blocks keyboard
+   and assistive-tech access, not just clicks.
+   ========================================================= */
+body.is-locked { overflow: hidden; }
+
+.coming-soon {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7rem 1.5rem 3rem;
+    text-align: center;
+    color: #f5f0e4;
+    background: rgba(28, 44, 18, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.coming-soon__inner { max-width: 540px; }
+
+.coming-soon__logo {
+    width: clamp(80px, 20vw, 112px);
+    height: auto;
+    margin: 0 auto 1.5rem;
+    display: block;
+}
+
+.coming-soon__kicker {
+    margin: 0 0 0.6rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 228, 0.7);
+}
+
+.coming-soon__title {
+    margin: 0 0 1rem;
+    font-size: clamp(2.4rem, 8vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.coming-soon__text {
+    margin: 0 0 2rem;
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: rgba(245, 240, 228, 0.8);
+}
+
+.coming-soon__btn {
+    display: inline-block;
+    background-color: #5C6F2B;
+    color: #ffffff;
+    padding: 0.8rem 2.1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.coming-soon__btn:hover,
+.coming-soon__btn:focus-visible {
+    background-color: #4a5a22;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .coming-soon__btn { transition: none; }
+    .coming-soon__btn:hover,
+    .coming-soon__btn:focus-visible { transform: none; }
+}
 
 .offcanvas {
     background-color: #CAE7DF !important;

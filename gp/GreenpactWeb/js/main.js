@@ -10,9 +10,9 @@
 const GREENFACTS = {
   // animated count-up stats
   stats: [
-    { value: 8, suffix: "M", prefix: "", label: "tonnes of plastic enter our oceans every year" },
-    { value: 1, suffix: "M", prefix: "", label: "species at risk of extinction worldwide" },
-    { value: 75, suffix: "%", prefix: "", label: "of Earth's land has been significantly altered" },
+    { value: 2025, suffix: "", prefix: "", label: "Founded" },
+    { value: 2, suffix: "", prefix: "", label: "Batches" },
+    { value: 75, suffix: "", prefix: "", label: "active members" },
   ],
   // flip cards (front question -> back answer)
   cards: [

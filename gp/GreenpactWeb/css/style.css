@@ -148,7 +148,8 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.05;
 /* =========================================================
    NAV
    ========================================================= */
-.nav {
+/* scoped to <header class="nav"> so it can't hit Bootstrap's <ul class="nav"> */
+header.nav {
   position: fixed; inset: 0 0 auto 0; z-index: 900;
   transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease), padding 0.4s var(--ease);
   padding: 0.4rem 0;
@@ -444,6 +445,164 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.05;
 .tl__title { font-size: 1.25rem; margin-bottom: 0.4rem; }
 .tl__excerpt { font-size: 0.92rem; color: rgba(245,240,228,0.75); }
 .tl__more { margin-top: 0.9rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber-bright); }
+
+/* =========================================================
+   JEJAK PROGRAM — horizontal timeline (gp/main.html)
+   Cards alternate above/below a centre axis. Each item is a
+   3-row grid (1fr / axis / 1fr): the two 1fr rows always end
+   up equal, so the axis row is centred in every item and the
+   line stays straight no matter how tall a card gets.
+   ========================================================= */
+/* this section is deliberately tighter than the rest of the page */
+#journey.section { padding-block: clamp(2.5rem, 4.5vw, 4.5rem); }
+
+.tline__legend {
+  display: flex; flex-wrap: wrap; gap: 0.35rem 1.3rem;
+  list-style: none; padding: 0; margin-top: 0.8rem;
+  font-size: 0.8rem; color: rgba(245, 240, 228, 0.72);
+}
+.tline__legend li { display: inline-flex; align-items: center; gap: 0.5rem; }
+.tline__key {
+  width: 12px; height: 12px; border-radius: 50%; flex: 0 0 auto;
+  background: var(--amber); border: 2px solid var(--amber);
+}
+.tline__key--now { background: var(--cream); border-color: var(--cream); }
+.tline__key--soon { background: transparent; border-color: rgba(245, 240, 228, 0.55); }
+
+/* full-bleed scroll rail (overrides `.section > *` centring) */
+.tline__rail {
+  --tline-axis: clamp(42px, 4.5vw, 56px);
+  --tline-dot: 14px;
+  max-width: none;
+  margin-top: clamp(1.3rem, 2.4vw, 1.9rem);
+  margin-inline: calc(var(--gut) * -1);
+  overflow-x: auto; overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.9rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--amber) rgba(245, 240, 228, 0.12);
+}
+.tline__rail::-webkit-scrollbar { height: 6px; }
+.tline__rail::-webkit-scrollbar-thumb { background: var(--amber); border-radius: 999px; }
+.tline__rail::-webkit-scrollbar-track { background: rgba(245, 240, 228, 0.1); }
+.tline__rail:focus-visible { outline: 2px solid var(--amber-bright); outline-offset: -2px; }
+
+.tline__track {
+  display: flex; align-items: stretch;
+  width: max-content; position: relative;
+  list-style: none; padding: 0 var(--gut);
+  gap: clamp(0.7rem, 1.5vw, 1.3rem);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' fill='none' stroke='%23F5F0E4' stroke-width='2' stroke-linecap='round' stroke-opacity='0.16'%3E%3Cpath d='M40 26v20M30 36h20'/%3E%3Cpath d='M212 74v14M205 81h14'/%3E%3Cpath d='M96 232v16M88 240h16'/%3E%3Cpath d='M264 206v18M255 215h18'/%3E%3C/svg%3E");
+}
+/* the axis: rows above and below it are equal, so 50% is exact */
+.tline__track::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 50%;
+  height: 2px; margin-top: -1px;
+  background: linear-gradient(90deg, transparent, var(--line-light) 3%, var(--line-light) 97%, transparent);
+}
+
+.tline__item {
+  flex: 0 0 auto; position: relative;
+  width: clamp(212px, 23vw, 268px);
+  display: grid;
+  grid-template-rows: 1fr var(--tline-axis) 1fr;
+}
+.tline__item.is-up > .tline__card { grid-row: 1; align-self: end; }
+.tline__item.is-down > .tline__card { grid-row: 3; align-self: start; }
+.tline__node { grid-row: 2; position: relative; }
+/* stem from the card down/up to the dot */
+.tline__node::before {
+  content: ""; position: absolute; left: 50%; width: 2px;
+  transform: translateX(-50%); background: var(--line-light);
+}
+.is-up > .tline__node::before { top: 0; bottom: 50%; }
+.is-down > .tline__node::before { top: 50%; bottom: 0; }
+/* the dot; the ring in page colour masks the axis behind it */
+.tline__node::after {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: var(--tline-dot); height: var(--tline-dot);
+  transform: translate(-50%, -50%);
+  border-radius: 50%; background: var(--amber); border: 2px solid var(--amber);
+  box-shadow: 0 0 0 5px var(--forest-deep);
+  transition: transform 0.3s var(--ease);
+}
+.tline__item:hover > .tline__node::after { transform: translate(-50%, -50%) scale(1.3); }
+.is-soon > .tline__node::after { background: transparent; border-color: rgba(245, 240, 228, 0.55); }
+
+.tline__card {
+  display: block; text-align: left; color: inherit;
+  background: rgba(245, 240, 228, 0.05);
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-md);
+  padding: 0.85rem 0.95rem 0.95rem;
+  transition: transform 0.4s var(--ease), background 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+.is-soon .tline__card { background: transparent; border-style: dashed; }
+a.tline__card:hover, a.tline__card:focus-visible {
+  transform: translateY(-5px);
+  background: rgba(245, 240, 228, 0.09);
+  border-color: var(--amber);
+}
+.tline__meta {
+  display: block; font-family: var(--serif); font-size: 0.72rem;
+  font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  line-height: 1.3; color: var(--amber-bright);
+}
+.is-soon .tline__meta { color: rgba(245, 240, 228, 0.65); }
+.tline__title { font-size: 0.95rem; line-height: 1.28; margin: 0.3rem 0 0.25rem; }
+.tline__text {
+  font-size: 0.8rem; line-height: 1.45; color: rgba(245, 240, 228, 0.72);
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.tline__more, .tline__tag {
+  display: inline-block; margin-top: 0.5rem;
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--amber-bright);
+}
+.tline__tag {
+  margin-top: 0.45rem; color: rgba(245, 240, 228, 0.6);
+  border: 1px solid var(--line-light); border-radius: 999px;
+  padding: 0.1rem 0.55rem; font-size: 0.6rem;
+}
+
+/* "Sekarang" marker — the rail opens centred on this */
+.tline__item.is-now { width: clamp(104px, 11vw, 140px); }
+.tline__nowline {
+  grid-row: 1 / -1; justify-self: center; width: 2px;
+  background: repeating-linear-gradient(180deg, rgba(245, 240, 228, 0.4) 0 6px, transparent 6px 13px);
+}
+.tline__nowlabel {
+  grid-row: 1; align-self: end; justify-self: center;
+  margin-bottom: 0.6rem; position: relative; z-index: 1;
+  font-size: 0.64rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--forest-deep); background: var(--cream);
+  border-radius: 999px; padding: 0.2rem 0.6rem; white-space: nowrap;
+}
+.is-now > .tline__node { z-index: 1; }
+.is-now > .tline__node::before { content: none; }
+.is-now > .tline__node::after {
+  background: var(--cream); border-color: var(--cream);
+  width: calc(var(--tline-dot) + 3px); height: calc(var(--tline-dot) + 3px);
+}
+.tline__pulse {
+  position: absolute; left: 50%; top: 50%; width: 38px; height: 38px;
+  transform: translate(-50%, -50%); border-radius: 50%;
+  border: 2px solid rgba(245, 240, 228, 0.5);
+  animation: tline-pulse 2.6s var(--ease) infinite;
+}
+@keyframes tline-pulse {
+  0% { transform: translate(-50%, -50%) scale(0.45); opacity: 0.9; }
+  70%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tline__pulse { animation: none; opacity: 0.4; }
+}
+
+/* end-of-rail call to action */
+.tline__card--more { text-align: center; }
+.tline__card--more .tline__title { margin-top: 0.15rem; }
+.tline__moreicon { font-size: 1.25rem; line-height: 1; color: var(--amber-bright); }
 
 /* =========================================================
    PARTNERS
