@@ -6,6 +6,21 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "8899"],
       "port": 8899
+    },
+    {
+      "name": "acs-rides",
+      "runtimeExecutable": "C:\\Users\\wijoy\\Documents\\ACS Rides\\.venv\\Scripts\\python.exe",
+      "runtimeArgs": [
+        "-m",
+        "flask",
+        "--app",
+        "C:\\Users\\wijoy\\Documents\\ACS Rides\\wsgi.py",
+        "run",
+        "--port",
+        "5057",
+        "--debug"
+      ],
+      "port": 5057
     }
   ]
 }
