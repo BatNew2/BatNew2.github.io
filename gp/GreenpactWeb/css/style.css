@@ -1018,6 +1018,16 @@ body.nav-open { overflow: hidden; }
   .merch__grid { grid-template-columns: 1fr; }
   .modal__gallery { grid-template-columns: repeat(2, 1fr); }
   .hero__actions .btn { flex: 1 1 auto; }
+
+  /* Team cards: keep 3-per-row instead of collapsing to 1-2 columns */
+  .team__grid--lead,
+  .team__grid--div { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+  .member__photo { margin-bottom: 0.5rem; }
+  .member__initials { font-size: 1.4rem; }
+  .member__name,
+  .member--sm .member__name { font-size: 0.78rem; line-height: 1.2; }
+  .member__role { font-size: 0.66rem; margin-top: 0.1rem; }
+  .member__meta { font-size: 0.6rem; }
 }
 
 /* =========================================================
