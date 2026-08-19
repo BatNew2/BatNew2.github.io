@@ -643,6 +643,27 @@ a.tline__card:hover, a.tline__card:focus-visible {
   font-family: var(--serif); font-size: 1.4rem; color: var(--forest);
   margin: clamp(2rem, 4vw, 3rem) 0 1.4rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--line);
 }
+.team__group-row {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  margin: clamp(2rem, 4vw, 3rem) 0 1.4rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--line);
+}
+.team__group-row .team__group { margin: 0; padding-bottom: 0; border-bottom: none; }
+.team__see-all-btn {
+  border: none; background: none; color: var(--amber); font-weight: 600; font-size: 0.95rem;
+  cursor: pointer; white-space: nowrap; transition: color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.team__see-all-btn:hover { color: var(--amber-bright); transform: translateX(3px); }
+.full-team-modal { border-radius: var(--r-md); border: none; }
+.full-team-modal .modal-header { border-bottom: 1px solid var(--line); }
+.full-team-modal .modal-title { font-family: var(--serif); color: var(--forest-deep); }
+.full-team-list {
+  list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+.full-team-list li {
+  padding: 0.5rem 0.8rem; border-radius: var(--r-sm, 8px); background: var(--cream);
+  color: var(--forest-deep); font-weight: 500;
+}
 .team__grid { display: grid; gap: clamp(1rem, 2.5vw, 1.8rem); }
 .team__grid--lead { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .team__grid--div { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
@@ -834,6 +855,7 @@ body.nav-open { overflow: hidden; }
 }
 .section__link:hover { gap: 0.8rem; color: var(--amber); }
 .impact-preview .section__link { color: var(--amber-bright); }
+.impact .section__link { color: var(--amber-bright); }
 
 /* =========================================================
    DONATE
