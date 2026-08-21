@@ -1,523 +1,447 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id" class="gp">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Program - Greenpact Society</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="maskot" href="gp_logo.png" />
+    <meta name="description" content="Program Greenpact Society melalui edukasi, penelitian, kolaborasi, dan pengabdian kepada masyarakat." />
+    <link rel="icon" href="gp_logo.ico" sizes="any" />
+    <link rel="preload" href="fonts/InstrumentSerif-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="images/proker/opt/seaweed-boat-800.webp" as="image" fetchpriority="high" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/program.css" />
   </head>
-  <body>
-    <div class="preloader" id="preloader" aria-hidden="true">
-      <div class="preloader__inner">
-        <img class="preloader__logo" src="GreenpactWeb/assets/images/logo-wood.png" alt="" />
-        <div class="preloader__bar"><span></span></div>
-        <p class="preloader__word">From us, to nature</p>
+
+  <body class="gp-body">
+    <div id="gp-pl">
+      <div>
+        <img src="images/logo-wood-440.webp" alt="Greenpact Society" width="440" height="586" />
+        <p class="cap gp-label">Greenpact Society</p>
+        <div class="bar" aria-hidden="true"><i></i></div>
       </div>
     </div>
-    <script>
-      (function () {
-        var preloader = document.getElementById('preloader');
-        if (!preloader) return;
-        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        var dismiss = function () { preloader.classList.add('is-done'); };
-        if (reduceMotion) { dismiss(); return; }
-        window.addEventListener('load', function () { setTimeout(dismiss, 1200); });
-        setTimeout(dismiss, 4000); // safety fallback if load never fires
-      })();
-    </script>
 
-    <header class="w-100 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between mb-4">
-      <nav class="w-100 navbar navbar-expand-lg  navbar-custom bottom-border">
-        <div class="container-fluid">
-          <a href="main.html"><img style="height:6vh" src="images/image-removebg-preview (4).png" class="logo"></a>
-          <button
-            class="navbar-toggler d-flex d-lg-none flex-column justify-content-around collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="toggler-icon top-bar"></span>
-            <span class="toggler-icon middle-bar"></span>
-            <span class="toggler-icon bottom-bar"></span>
-          </button>
+    <nav class="gp-nav" id="gp-nav" aria-label="Main navigation">
+      <a class="mark" href="main.html">
+        <picture>
+          <!-- the wordmark needs room; below 720px the horse mark carries it alone -->
+          <source media="(max-width:719px)" srcset="images/logo-mark-72.webp 1x, images/logo-mark-144.webp 2x" width="72" height="85" />
+          <img src="images/logo-full-260.webp" srcset="images/logo-full-260.webp 1x, images/logo-full-520.webp 2x"
+               alt="Greenpact Society" width="260" height="51" decoding="async" />
+        </picture>
+      </a>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="program.html" aria-current="page">Program</a></li>
+        <li><a href="products.html">Merch</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="team.html">Team</a></li>
+      </ul>
+    </nav>
 
-          <div class="navbar-collapse collapse" id="navbarSupportedContent">
-            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-              <li class="nav-item"><a class="nav-link cream px-2" href="main.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link cream px-2" aria-current="page" href="program.html">Program</a></li>
-              <li class="nav-item"><a class="nav-link cream px-2" href="products.html">Merch</a></li>
-              <li class="nav-item"><a class="nav-link cream px-2" href="donate.html">Donate</a></li>
-              <li class="nav-item"><a class="nav-link cream px-2" href="team.html">Team</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <!-- Programs Hero Section -->
-      <section class="programs-hero">
-        <div class="container">
-          <h1>Program Kami</h1>
+    <main id="gp-main">
+      <section class="gp-sec gp-program-hero" id="gp-program-hero" aria-labelledby="gp-program-title">
+        <figure class="gp-program-hero__visual">
+          <img src="images/proker/opt/seaweed-boat-800.webp"
+               alt="Anggota Greenpact berada di laut di samping perahu budidaya rumput laut"
+               width="800" height="600" fetchpriority="high" decoding="async" />
+          <span class="gp-program-hero__scrim" aria-hidden="true"></span>
+        </figure>
+        <div class="gp-program-hero__copy gp-reveal">
+          <h1 id="gp-program-title">Program Kami</h1>
           <p>Program kerja Greenpact dirancang untuk mengubah kepedulian terhadap lingkungan menjadi aksi nyata. Melalui edukasi, penelitian, kolaborasi, dan pengabdian kepada masyarakat, setiap program memberikan kesempatan bagi generasi muda untuk menciptakan dampak yang berkelanjutan</p>
         </div>
+        <div class="gp-check gp-check--bottom" aria-hidden="true"></div>
       </section>
 
-      <!-- Programs Cards Section -->
-      <section class="programs-section">
-        <div class="container">
-          <div class="programs-grid">
-            
-            <!-- Program Card 1 -->
-            <div class="program-card" onclick="openModal('modal1')">
-              <div class="program-card-image">
-                <img src="images/proker/Gun 1.jpeg" alt="Environmental Education" fetchpriority="high" decoding="async">
-                <div class="card-overlay">
-                  <span class="view-more">View Details</span>
-                </div>
-              </div>
-              <div class="program-card-content">
-                <h3>Penanaman dan Penelitian Rumput Laut dengan BRIN</h3>
-                <p class="card-subtitle">Pada tanggal 23-25 Oktober lalu, tim dari Greenpact society melakukan pelatihan budidaya rumput laut yang dibimbing oleh tim Badan...</p>
-              </div>
+      <section class="gp-sec gp-programs" id="gp-programs" aria-label="Program Greenpact Society">
+        <div class="gp-bento" role="list">
+          <article class="gp-program gp-program--flagship gp-reveal" role="listitem">
+            <span class="gp-program__media">
+              <img src="images/proker/opt/gun-1-800.webp"
+                   alt="Tim Greenpact menyiapkan bibit rumput laut bersama pembimbing di lokasi budidaya"
+                   width="800" height="533" loading="lazy" decoding="async" />
+            </span>
+            <div class="gp-program__copy">
+              <span class="gp-program__action">View Details</span>
+              <h3 class="gp-program__title">Penanaman dan Penelitian Rumput Laut dengan BRIN</h3>
+              <p class="gp-program__subtitle">Pada tanggal 23-25 Oktober lalu, tim dari Greenpact society melakukan pelatihan budidaya rumput laut yang dibimbing oleh tim Badan...</p>
             </div>
+            <button class="gp-program__button" type="button" data-gp-modal-open="gp-modal-1"
+                    aria-label="View Details: Penanaman dan Penelitian Rumput Laut dengan BRIN"
+                    aria-haspopup="dialog" aria-controls="gp-modal-1"></button>
+          </article>
 
-            <!-- Program Card 2 -->
-            <div class="program-card" onclick="openModal('modal2')">
-              <div class="program-card-image">
-                <img src="images/proker/Any 1.jpeg" alt="Community Sustainability" decoding="async">
-                <div class="card-overlay">
-                  <span class="view-more">View Details</span>
-                </div>
-              </div>
-              <div class="program-card-content">
-                <h3>Hari Lingkungan Sedunia - Anyer</h3>
-                <p class="card-subtitle">Greenpact pergi ke Anyer untuk merayakan hari lingkungan sedunia. Di Anyer...</p>
-              </div>
+          <article class="gp-program gp-program--anyer gp-reveal" role="listitem">
+            <span class="gp-program__media">
+              <img src="images/proker/opt/any-1-400.webp"
+                   alt="Tas kain dengan hasil cetak daun dari kegiatan ecoprint di Anyer"
+                   width="400" height="600" loading="lazy" decoding="async" />
+            </span>
+            <div class="gp-program__copy">
+              <span class="gp-program__action">View Details</span>
+              <h3 class="gp-program__title">Hari Lingkungan Sedunia - Anyer</h3>
+              <p class="gp-program__subtitle">Greenpact pergi ke Anyer untuk merayakan hari lingkungan sedunia. Di Anyer...</p>
             </div>
+            <button class="gp-program__button" type="button" data-gp-modal-open="gp-modal-2"
+                    aria-label="View Details: Hari Lingkungan Sedunia - Anyer"
+                    aria-haspopup="dialog" aria-controls="gp-modal-2"></button>
+          </article>
 
-            <!-- Program Card 3 -->
-            <div class="program-card" onclick="openModal('modal3')">
-              <div class="program-card-image">
-                <img src="images/proker/Ams 1.jpeg" alt="Green Innovation" decoding="async">
-                <div class="card-overlay">
-                  <span class="view-more">View Details</span>
-                </div>
-              </div>
-              <div class="program-card-content">
-                <h3>Workshop AMSA X GP</h3>
-                <p class="card-subtitle">Greenpact bersama dengan AMSA memberikan edukasi terhadap masyarakat tentang paru-paru. Ada seminar...</p>
-              </div>
+          <article class="gp-program gp-program--amsa gp-reveal" role="listitem">
+            <span class="gp-program__media">
+              <img src="images/proker/opt/ams-1-400.webp"
+                   alt="Peserta berkumpul di area workshop kesehatan AMSA dan Greenpact"
+                   width="400" height="267" loading="lazy" decoding="async" />
+            </span>
+            <div class="gp-program__copy">
+              <span class="gp-program__action">View Details</span>
+              <h3 class="gp-program__title">Workshop AMSA X GP</h3>
+              <p class="gp-program__subtitle">Greenpact bersama dengan AMSA memberikan edukasi terhadap masyarakat tentang paru-paru. Ada seminar...</p>
             </div>
+            <button class="gp-program__button" type="button" data-gp-modal-open="gp-modal-3"
+                    aria-label="View Details: Workshop AMSA X GP"
+                    aria-haspopup="dialog" aria-controls="gp-modal-3"></button>
+          </article>
 
-            <!-- Program Card 4 -->
-            <div class="program-card" onclick="openModal('modal4')">
-              <div class="program-card-image">
-                <img src="images/proker/Sem 1.jpg" alt="Ecological Economics" decoding="async">
-                <div class="card-overlay">
-                  <span class="view-more">View Details</span>
-                </div>
-              </div>
-              <div class="program-card-content">
-                <h3>Webinar GP X Mortier</h3>
-                <p class="card-subtitle">Webinar yang diadakan oleh Greenpact bersama Mortier, dan mengundang Kak Irene, salah satu founder Mortier sebagai...</p>
-              </div>
+          <article class="gp-program gp-program--webinar gp-reveal" role="listitem">
+            <span class="gp-program__media">
+              <img src="images/proker/opt/sem-1-400.webp"
+                   alt="Sesi webinar daring Eco Talk bersama Mortier"
+                   width="400" height="262" loading="lazy" decoding="async" />
+            </span>
+            <div class="gp-program__copy">
+              <span class="gp-program__action">View Details</span>
+              <h3 class="gp-program__title">Webinar GP X Mortier</h3>
+              <p class="gp-program__subtitle">Webinar yang diadakan oleh Greenpact bersama Mortier, dan mengundang Kak Irene, salah satu founder Mortier sebagai...</p>
             </div>
+            <button class="gp-program__button" type="button" data-gp-modal-open="gp-modal-4"
+                    aria-label="View Details: Webinar GP X Mortier"
+                    aria-haspopup="dialog" aria-controls="gp-modal-4"></button>
+          </article>
 
-            <!-- Program Card 5 -->
-            <div class="program-card" onclick="openModal('modal5')">
-              <div class="program-card-image">
-                <img src="images/proker/Pab 1.jpeg" alt="Reforestation" decoding="async">
-                <div class="card-overlay">
-                  <span class="view-more">View Details</span>
-                </div>
-              </div>
-              <div class="program-card-content">
-                <h3>Pengunjungan Pabrik Mortier</h3>
-                <p class="card-subtitle">Greenpact mengunjungi langsung pabrik mortier yang ada di bekasi untuk...</p>
-              </div>
+          <article class="gp-program gp-program--factory gp-reveal" role="listitem">
+            <span class="gp-program__media">
+              <img src="images/proker/opt/pab-1-400.webp"
+                   alt="Peserta Greenpact berfoto bersama saat kunjungan ke pabrik Mortier"
+                   width="400" height="267" loading="lazy" decoding="async" />
+            </span>
+            <div class="gp-program__copy">
+              <span class="gp-program__action">View Details</span>
+              <h3 class="gp-program__title">Pengunjungan Pabrik Mortier</h3>
+              <p class="gp-program__subtitle">Greenpact mengunjungi langsung pabrik mortier yang ada di bekasi untuk...</p>
             </div>
+            <button class="gp-program__button" type="button" data-gp-modal-open="gp-modal-5"
+                    aria-label="View Details: Pengunjungan Pabrik Mortier"
+                    aria-haspopup="dialog" aria-controls="gp-modal-5"></button>
+          </article>
 
-            <!-- Program Card 6 -->
-            <div class="program-card" onclick="openModal('modal6')">
-              <div class="program-card-image">
-                <img src="images/proker/Eras 1.jpg" alt="Social Welfare" decoding="async">
-                <div class="card-overlay">
-                  <span class="view-more">View Details</span>
-                </div>
-              </div>
-              <div class="program-card-content">
-                <h3>Pameran bukantentangsampah</h3>
-                <p class="card-subtitle">Greenpact diundang untuk datang ke pameran yang diadakan oleh tim “bukantentangsampah” di Erasmus Huis. Pada...</p>
-              </div>
+          <article class="gp-program gp-program--exhibit gp-reveal" role="listitem">
+            <span class="gp-program__media">
+              <img src="images/proker/opt/bottle-installation-400.webp"
+                   alt="Instalasi botol plastik pada pameran bukantentangsampah di Erasmus Huis"
+                   width="400" height="448" loading="lazy" decoding="async" />
+            </span>
+            <div class="gp-program__copy">
+              <span class="gp-program__action">View Details</span>
+              <h3 class="gp-program__title">Pameran bukantentangsampah</h3>
+              <p class="gp-program__subtitle">Greenpact diundang untuk datang ke pameran yang diadakan oleh tim “bukantentangsampah” di Erasmus Huis. Pada...</p>
             </div>
-
-          </div>
+            <button class="gp-program__button" type="button" data-gp-modal-open="gp-modal-6"
+                    aria-label="View Details: Pameran bukantentangsampah"
+                    aria-haspopup="dialog" aria-controls="gp-modal-6"></button>
+          </article>
         </div>
       </section>
 
-      <!-- Modal 1 -->
-      <div id="modal1" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal1')">&times;</span>
-          <div class="modal-main-image">
-            <img id="mainImg1" src="images/proker/Gun 1.jpeg" alt="Environmental Education" loading="lazy" decoding="async">
-          </div>
-          <div class="modal-thumbnail-carousel">
-            <div class="thumb-item active" onclick="changeMainImage('mainImg1', this)">
-              <img src="images/proker/Gun 1.jpeg" alt="Thumb 1" loading="lazy" decoding="async">
-            </div>
-            <div class="thumb-item" onclick="changeMainImage('mainImg1', this)">
-              <img src="images/proker/Gun 2.jpeg" alt="Thumb 2" loading="lazy" decoding="async">
-            </div>
-            <div class="thumb-item" onclick="changeMainImage('mainImg1', this)">
-              <img src="images/proker/Gun 3.jpeg" alt="Thumb 3" loading="lazy" decoding="async">
-            </div>
-          </div>
-          <div class="modal-text">
-            <h2>Penanaman dan Penelitian Rumput Laut dengan BRIN</h2>
-              <p>Pada tanggal 23-25 Oktober lalu, tim dari Greenpact society melakukan pelatihan budidaya rumput laut yang dibimbing oleh tim Badan Riset dan Inovasi Nasional (BRIN) di Desa Selesung, Pulau Legundi. Team Greenpact menerapkan metode polikultur, vertikultur, long line, dan kantong. Dari pelatihan ini, Greenpact berhasil memperoleh hasil tanam sekitar 87,6 kg rumput laut.</p>
-              <h4>Key Highlights</h4>
-              <ul class="program-highlights">
-                <li>Kolaborasi dengan BRIN</li>
-                <li>Penelitian</li>
-                <li>Menanam 87.6kg rumput laut</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="modal2" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal2')">&times;</span>
-          <div class="modal-main-image">
-            <img id="mainImg2" src="images/proker/Any 1.jpeg" alt="Community Sustainability" loading="lazy" decoding="async">
-          </div>
-          <div class="modal-thumbnail-carousel">
-            <div class="thumb-item active" onclick="changeMainImage('mainImg2', this)">
-              <img src="images/proker/Any 1.jpeg" alt="Thumb 1" loading="lazy" decoding="async">
-            </div>
-            <div class="thumb-item" onclick="changeMainImage('mainImg2', this)">
-              <img src="images/proker/Any 2.jpeg" alt="Thumb 2" loading="lazy" decoding="async">
-            </div>
-            <div class="thumb-item" onclick="changeMainImage('mainImg2', this)">
-              <img src="images/proker/Any 3 .jpeg" alt="Thumb 3" loading="lazy" decoding="async">
-            </div>
-          </div>
-          <div class="modal-text">
-            <h2>Hari Lingkungan Sedunia - Anyer</h2>
-            <p>Greenpact pergi ke Anyer untuk merayakan hari lingkungan sedunia. Di Anyer, Greenpact melakukan bermain dan belajar bersama anak-anak lokal di Anyer, seperti belajar proses pembuatan kompos sampai aktivitas ecoprint. Dalam rangka merayakan hari lingkungan sedunia, Greenpact juga menanam pohon di ….
-</p>
-            <h4>Key Highlights</h4>
-            <ul class="program-highlights">
-              <li>Hari Lingkungan Sedunia</li>
-              <li>Belajar proses pembuatan kompos</li>
-              <li>Belajar Aktivitas Ecoprint</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal 3 -->
-      <div id="modal3" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal3')">&times;</span>
-          <div class="modal-main-image">
-            <img id="mainImg3" src="images/proker/Ams 1.jpeg" alt="Green Innovation" loading="lazy" decoding="async">
-          </div>
-          <div class="modal-thumbnail-carousel">
-            <div class="thumb-item active" onclick="changeMainImage('mainImg3', this)">
-              <img src="images/proker/Ams 1.jpeg" alt="Thumb 1" loading="lazy" decoding="async">
-            </div>
-            <div class="thumb-item" onclick="changeMainImage('mainImg3', this)">
-              <img src="images/proker/Ams 2.jpeg" alt="Thumb 2" loading="lazy" decoding="async">
-            </div>
-            <div class="thumb-item" onclick="changeMainImage('mainImg3', this)">
-              <img src="images/proker/Ams 3.jpeg" alt="Thumb 3" loading="lazy" decoding="async">
-            </div>
-          </div>
-          <div class="modal-text">
-            <h2>Workshop AMSA X GP</h2>
-            <p>Greenpact bersama dengan AMSA memberikan edukasi terhadap masyarakat tentang paru-paru. Ada seminar yang dibawakan dari tim AMSA dan juga dari Greenpact menghadirkan beberapa booth untuk edukasi mulai dari cara menjaga agar udara tetap bersih, tanaman yang dapat menyaring udara dengan bersih, dan berbagai booth edukatif lainnya.</p>
-            <h4>Key Highlights</h4>
-            <ul class="program-highlights">
-              <li>AMSA X GP</li>
-              <li>Workshop Edukatif</li>
-              <li>Memberi edukasi tentang paru-paru ke masyarakat</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal 4 -->
-      <div id="modal4" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal4')">&times;</span>
-          <div class="modal-main-image">
-            <img id="mainImg4" src="images/proker/Sem 1.jpg" alt="Ecological Economics" loading="lazy" decoding="async">
-          </div>
-          <div class="modal-thumbnail-carousel">
-            <div class="thumb-item active" onclick="changeMainImage('mainImg4', this)">
-              <img src="images/proker/Sem 1.jpg" alt="Thumb 1" loading="lazy" decoding="async">
-            </div>
-            <div class="thumb-item" onclick="changeMainImage('mainImg4', this)">
-              <img src="images/proker/Sem 2.jpg" alt="Thumb 2" loading="lazy" decoding="async">
-            </div>
-            <div class="thumb-item" onclick="changeMainImage('mainImg4', this)">
-              <img src="images/proker/Sem 3.jpg" alt="Thumb 3" loading="lazy" decoding="async">
-            </div>
-          </div>
-          <div class="modal-text">
-            <h2>Webinar GP X Mortier</h2>
-            <p>Webinar yang diadakan oleh Greenpact bersama Mortier, dan mengundang Kak Irene, salah satu founder Mortier sebagai narasumber. Pada webinar ini diajarkan tentang bagaimana Mortier mengolah sampah plastik menjadi produk yang dapat digunakan lagi. </p>
-            <h4>Key Highlights</h4>
-            <ul class="program-highlights">
-              <li>GP X Mortier</li>
-              <li>Webinar Edukatif</li>
-              <li>Pengolahan Sampah</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Modal 5 -->
-      <div id="modal5" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal5')">&times;</span>
-          <div class="modal-main-image">
-            <img id="mainImg5" src="images/proker/Pab 1.jpeg" alt="Reforestation" loading="lazy" decoding="async">
-          </div>
-          <div class="modal-thumbnail-carousel">
-            <div class="thumb-item active" onclick="changeMainImage('mainImg5', this)">
-              <img src="images/proker/Pab 1.jpeg" alt="Thumb 1" loading="lazy" decoding="async">
-            </div>
-            <div class="thumb-item" onclick="changeMainImage('mainImg5', this)">
-              <img src="images/proker/Pab 2.jpeg" alt="Thumb 2" loading="lazy" decoding="async">
-            </div>
-            <div class="thumb-item" onclick="changeMainImage('mainImg5', this)">
-              <img src="images/proker/Pab 3 jpeg.jpg" alt="Thumb 3" loading="lazy" decoding="async">
-            </div>
-          </div>
-          <div class="modal-text">
-            <h2>Pengunjungan Pabrik Mortier</h2>
-            <p>Greenpact mengunjungi langsung pabrik mortier yang ada di bekasi untuk belajar dan mencoba bagaimana mendaur ulang sampah-sampah plastik menjadi barang yang berfungsi. Tim greenpact belajar membuat cardholder, carabiner dari sampah plastik</p>
-            <h4>Key Highlights</h4>
-            <ul class="program-highlights">
-              <li>Pabrik Mortier</li>
-              <li>Belajar Mendaur Ulang Sampah</li>
-              <li>Pengolahan Plastik Menjadi Barang</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal 6 -->
-      <div id="modal6" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal6')">&times;</span>
-          <div class="modal-main-image">
-            <img id="mainImg6" src="images/proker/Eras 1.jpg" alt="Social Welfare" loading="lazy" decoding="async">
-          </div>
-          <div class="modal-thumbnail-carousel">
-            <div class="thumb-item active" onclick="changeMainImage('mainImg6', this)">
-              <img src="images/proker/Eras 1.jpg" alt="Thumb 1" loading="lazy" decoding="async">
-            </div>
-            <div class="thumb-item" onclick="changeMainImage('mainImg6', this)">
-              <img src="images/proker/Eras 2.jpg" alt="Thumb 2" loading="lazy" decoding="async">
-            </div>
-            <div class="thumb-item" onclick="changeMainImage('mainImg6', this)">
-              <img src="images/proker/Eras 3.jpg" alt="Thumb 3" loading="lazy" decoding="async">
-            </div>
-          </div>
-          <div class="modal-text">
-            <h2>Pameran bukantentangsampah</h2>
-            <p>Greenpact diundang untuk datang ke pameran yang diadakan oleh tim “bukantentangsampah” di Erasmus Huis. Pada pameran ini Greenpact diajak bermain kartu tentang daur ulang, dan belajar tentang bagaimana kondisi sampah dan lingkungan sekitar kita.</p>
-            <h4>Key Highlights</h4>
-            <ul class="program-highlights">
-              <li>Pameran di Erasmus Huis</li>
-              <li>Diadakan tim "bukantentangsampah"</li>
-              <li>Kondisi sampah dan lingkungan sekitar kita</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Call to Action Section -->
-      <section class="programs-cta">
-        <div class="container">
-          <h2>Ikuti Kami</h2>
+      <section class="gp-sec gp-program-cta" id="gp-program-cta" aria-labelledby="gp-program-cta-title">
+        <figure class="gp-program-cta__visual">
+          <img src="images/proker/opt/plastic-flake-800.webp" alt="Cacahan plastik berwarna hasil proses daur ulang di pabrik Mortier" width="800" height="533" loading="lazy" />
+          <span class="gp-program-cta__scrim" aria-hidden="true"></span>
+        </figure>
+        <div class="gp-program-cta__copy gp-reveal">
+          <h2 id="gp-program-cta-title">Ikuti Kami</h2>
           <p>Jadilah bagian dari gerakan Greenpact. Bersama, kita dapat menciptakan perubahan nyata melalui aksi lingkungan, inovasi, dan kolaborasi demi masa depan yang lebih berkelanjutan.</p>
-          <div class="cta-buttons">
-            <a href="donate.html" class="btn btn-primary btn-lg">Donate</a>
-            <a href="main.html#visi-misi" class="btn btn-outline-primary btn-lg">Tentang Kami</a>
+          <div class="gp-program-cta__actions">
+            <a class="gp-btn" href="donate.html">Donate</a>
+            <a class="gp-text-link" href="main.html#gp-visi">Tentang Kami</a>
           </div>
         </div>
       </section>
-    
-</main>
-    <footer class="footer">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-12 col-md-4">
-            <div class="footer-section">
-              <img src="gp_logo.png" alt="Greenpact Logo" class="footer-logo" />
-              <p class="footer-tagline">From us, to nature</p>
-            </div>
+    </main>
+
+    <div class="gp-modal" id="gp-modal-1" role="dialog" aria-modal="true" aria-labelledby="gp-modal-1-title" data-gp-modal-overlay hidden>
+      <div class="gp-modal__panel" tabindex="-1">
+        <button class="gp-modal__close" type="button" data-gp-modal-close aria-label="Tutup dialog Penanaman dan Penelitian Rumput Laut dengan BRIN">&times;</button>
+        <div class="gp-modal__media">
+          <div class="gp-modal__main">
+            <img id="gp-modal-1-main" src="images/proker/opt/gun-1-800.webp"
+                 alt="Tim Greenpact menyiapkan bibit rumput laut bersama pembimbing di lokasi budidaya"
+                 width="800" height="533" loading="lazy" decoding="async" />
           </div>
-          
-          <div class="col-12 col-md-4">
-            <div class="footer-section">
-              <h5>Quick Links</h5>
-              <ul class="footer-links">
-                <li><a href="main.html">Home</a></li>
-                <li><a href="program.html">Program</a></li>
-                <li><a href="/products">Merch</a></li>
-                <li><a href="donate.html">Donate</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="col-12 col-md-4">
-            <div class="footer-section">
-              <h5>Contact Us</h5>
-              <p class="footer-contact">Email: greenpact.society@gmail.com</p>
-              <p class="footer-contact">Phone: +62 811-9720-097</p>
-              <p class="footer-contact">Instagram: @greenpact.society</p>
-            </div>
+          <div class="gp-modal__thumbs" role="group" aria-label="Foto Penanaman dan Penelitian Rumput Laut dengan BRIN">
+            <button class="gp-modal__thumb is-active" type="button" data-gp-thumb data-gp-target="gp-modal-1-main"
+                    data-gp-src="images/proker/opt/gun-1-800.webp" data-gp-alt="Tim Greenpact menyiapkan bibit rumput laut bersama pembimbing di lokasi budidaya" data-gp-width="800" data-gp-height="533"
+                    aria-label="Tampilkan foto persiapan bibit rumput laut" aria-pressed="true">
+              <img src="images/proker/opt/gun-1-400.webp" alt="Tim menyiapkan bibit rumput laut" width="400" height="267" loading="lazy" decoding="async" />
+            </button>
+            <button class="gp-modal__thumb" type="button" data-gp-thumb data-gp-target="gp-modal-1-main"
+                    data-gp-src="images/proker/opt/seaweed-harvest-800.webp" data-gp-alt="Anggota Greenpact menunjukkan hasil panen rumput laut" data-gp-width="800" data-gp-height="533"
+                    aria-label="Tampilkan foto hasil panen rumput laut" aria-pressed="false">
+              <img src="images/proker/opt/seaweed-harvest-400.webp" alt="Anggota menunjukkan hasil panen rumput laut" width="400" height="266" loading="lazy" decoding="async" />
+            </button>
+            <button class="gp-modal__thumb" type="button" data-gp-thumb data-gp-target="gp-modal-1-main"
+                    data-gp-src="images/proker/opt/seaweed-boat-800.webp" data-gp-alt="Anggota Greenpact berada di laut di samping perahu budidaya" data-gp-width="800" data-gp-height="600"
+                    aria-label="Tampilkan foto kegiatan laut di samping perahu" aria-pressed="false">
+              <img src="images/proker/opt/seaweed-boat-400.webp" alt="Kegiatan laut di samping perahu budidaya" width="400" height="300" loading="lazy" decoding="async" />
+            </button>
           </div>
         </div>
-        
-        <div class="footer-bottom">
-          <p>&copy; 2026 Greenpact Society. All rights reserved.</p>
+        <div class="gp-modal__text">
+          <h2 id="gp-modal-1-title">Penanaman dan Penelitian Rumput Laut dengan BRIN</h2>
+          <p>Pada tanggal 23-25 Oktober lalu, tim dari Greenpact society melakukan pelatihan budidaya rumput laut yang dibimbing oleh tim Badan Riset dan Inovasi Nasional (BRIN) di Desa Selesung, Pulau Legundi. Team Greenpact menerapkan metode polikultur, vertikultur, long line, dan kantong. Dari pelatihan ini, Greenpact berhasil memperoleh hasil tanam sekitar 87,6 kg rumput laut.</p>
+          <h4>Key Highlights</h4>
+          <ul class="gp-program-highlights">
+            <li>Kolaborasi dengan BRIN</li>
+            <li>Penelitian</li>
+            <li>Menanam 87.6kg rumput laut</li>
+          </ul>
         </div>
       </div>
+    </div>
+
+    <div class="gp-modal" id="gp-modal-2" role="dialog" aria-modal="true" aria-labelledby="gp-modal-2-title" data-gp-modal-overlay hidden>
+      <div class="gp-modal__panel" tabindex="-1">
+        <button class="gp-modal__close" type="button" data-gp-modal-close aria-label="Tutup dialog Hari Lingkungan Sedunia - Anyer">&times;</button>
+        <div class="gp-modal__media">
+          <div class="gp-modal__main">
+            <img id="gp-modal-2-main" src="images/proker/opt/any-1-800.webp"
+                 alt="Tas kain dengan hasil cetak daun dari kegiatan ecoprint di Anyer"
+                 width="800" height="1200" loading="lazy" decoding="async" />
+          </div>
+          <div class="gp-modal__thumbs" role="group" aria-label="Foto Hari Lingkungan Sedunia - Anyer">
+            <button class="gp-modal__thumb is-active" type="button" data-gp-thumb data-gp-target="gp-modal-2-main"
+                    data-gp-src="images/proker/opt/any-1-800.webp" data-gp-alt="Tas kain dengan hasil cetak daun dari kegiatan ecoprint di Anyer" data-gp-width="800" data-gp-height="1200"
+                    aria-label="Tampilkan foto hasil ecoprint pada tas kain" aria-pressed="true">
+              <img src="images/proker/opt/any-1-400.webp" alt="Hasil ecoprint pada tas kain" width="400" height="600" loading="lazy" decoding="async" />
+            </button>
+            <button class="gp-modal__thumb" type="button" data-gp-thumb data-gp-target="gp-modal-2-main"
+                    data-gp-src="images/proker/opt/any-2-800.webp" data-gp-alt="Anak-anak dan relawan mengikuti kegiatan bersama pada malam hari di Anyer" data-gp-width="800" data-gp-height="533"
+                    aria-label="Tampilkan foto kegiatan bersama anak-anak di Anyer" aria-pressed="false">
+              <img src="images/proker/opt/any-2-400.webp" alt="Kegiatan bersama anak-anak di Anyer" width="400" height="267" loading="lazy" decoding="async" />
+            </button>
+            <button class="gp-modal__thumb" type="button" data-gp-thumb data-gp-target="gp-modal-2-main"
+                    data-gp-src="images/proker/opt/any-3-800.webp" data-gp-alt="Relawan Greenpact belajar bersama anak-anak di area terbuka Anyer" data-gp-width="800" data-gp-height="533"
+                    aria-label="Tampilkan foto belajar bersama di area terbuka" aria-pressed="false">
+              <img src="images/proker/opt/any-3-400.webp" alt="Belajar bersama di area terbuka Anyer" width="400" height="267" loading="lazy" decoding="async" />
+            </button>
+          </div>
+        </div>
+        <div class="gp-modal__text">
+          <h2 id="gp-modal-2-title">Hari Lingkungan Sedunia - Anyer</h2>
+          <p>Greenpact pergi ke Anyer untuk merayakan hari lingkungan sedunia. Di Anyer, Greenpact melakukan bermain dan belajar bersama anak-anak lokal di Anyer, seperti belajar proses pembuatan kompos sampai aktivitas ecoprint. Dalam rangka merayakan hari lingkungan sedunia, Greenpact juga menanam pohon di ….
+</p>
+          <h4>Key Highlights</h4>
+          <ul class="gp-program-highlights">
+            <li>Hari Lingkungan Sedunia</li>
+            <li>Belajar proses pembuatan kompos</li>
+            <li>Belajar Aktivitas Ecoprint</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="gp-modal" id="gp-modal-3" role="dialog" aria-modal="true" aria-labelledby="gp-modal-3-title" data-gp-modal-overlay hidden>
+      <div class="gp-modal__panel" tabindex="-1">
+        <button class="gp-modal__close" type="button" data-gp-modal-close aria-label="Tutup dialog Workshop AMSA X GP">&times;</button>
+        <div class="gp-modal__media">
+          <div class="gp-modal__main">
+            <img id="gp-modal-3-main" src="images/proker/opt/ams-1-800.webp"
+                 alt="Peserta berkumpul di area workshop kesehatan AMSA dan Greenpact"
+                 width="800" height="533" loading="lazy" decoding="async" />
+          </div>
+          <div class="gp-modal__thumbs" role="group" aria-label="Foto Workshop AMSA X GP">
+            <button class="gp-modal__thumb is-active" type="button" data-gp-thumb data-gp-target="gp-modal-3-main"
+                    data-gp-src="images/proker/opt/ams-1-800.webp" data-gp-alt="Peserta berkumpul di area workshop kesehatan AMSA dan Greenpact" data-gp-width="800" data-gp-height="533"
+                    aria-label="Tampilkan foto peserta workshop" aria-pressed="true">
+              <img src="images/proker/opt/ams-1-400.webp" alt="Peserta workshop AMSA dan Greenpact" width="400" height="267" loading="lazy" decoding="async" />
+            </button>
+            <button class="gp-modal__thumb" type="button" data-gp-thumb data-gp-target="gp-modal-3-main"
+                    data-gp-src="images/proker/opt/ams-2-800.webp" data-gp-alt="Peserta mengamati instalasi edukasi tentang kualitas udara" data-gp-width="800" data-gp-height="533"
+                    aria-label="Tampilkan foto instalasi edukasi kualitas udara" aria-pressed="false">
+              <img src="images/proker/opt/ams-2-400.webp" alt="Instalasi edukasi kualitas udara" width="400" height="267" loading="lazy" decoding="async" />
+            </button>
+            <button class="gp-modal__thumb" type="button" data-gp-thumb data-gp-target="gp-modal-3-main"
+                    data-gp-src="images/proker/opt/ams-3-800.webp" data-gp-alt="Tim Greenpact berfoto bersama peserta setelah workshop" data-gp-width="800" data-gp-height="533"
+                    aria-label="Tampilkan foto tim bersama peserta workshop" aria-pressed="false">
+              <img src="images/proker/opt/ams-3-400.webp" alt="Tim bersama peserta workshop" width="400" height="267" loading="lazy" decoding="async" />
+            </button>
+          </div>
+        </div>
+        <div class="gp-modal__text">
+          <h2 id="gp-modal-3-title">Workshop AMSA X GP</h2>
+          <p>Greenpact bersama dengan AMSA memberikan edukasi terhadap masyarakat tentang paru-paru. Ada seminar yang dibawakan dari tim AMSA dan juga dari Greenpact menghadirkan beberapa booth untuk edukasi mulai dari cara menjaga agar udara tetap bersih, tanaman yang dapat menyaring udara dengan bersih, dan berbagai booth edukatif lainnya.</p>
+          <h4>Key Highlights</h4>
+          <ul class="gp-program-highlights">
+            <li>AMSA X GP</li>
+            <li>Workshop Edukatif</li>
+            <li>Memberi edukasi tentang paru-paru ke masyarakat</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="gp-modal" id="gp-modal-4" role="dialog" aria-modal="true" aria-labelledby="gp-modal-4-title" data-gp-modal-overlay hidden>
+      <div class="gp-modal__panel" tabindex="-1">
+        <button class="gp-modal__close" type="button" data-gp-modal-close aria-label="Tutup dialog Webinar GP X Mortier">&times;</button>
+        <div class="gp-modal__media">
+          <div class="gp-modal__main">
+            <img id="gp-modal-4-main" src="images/proker/opt/sem-1-800.webp"
+                 alt="Sesi webinar daring Eco Talk bersama Mortier"
+                 width="800" height="525" loading="lazy" decoding="async" />
+          </div>
+          <div class="gp-modal__thumbs" role="group" aria-label="Foto Webinar GP X Mortier">
+            <button class="gp-modal__thumb is-active" type="button" data-gp-thumb data-gp-target="gp-modal-4-main"
+                    data-gp-src="images/proker/opt/sem-1-800.webp" data-gp-alt="Sesi webinar daring Eco Talk bersama Mortier" data-gp-width="800" data-gp-height="525"
+                    aria-label="Tampilkan foto sesi webinar" aria-pressed="true">
+              <img src="images/proker/opt/sem-1-400.webp" alt="Sesi webinar daring" width="400" height="262" loading="lazy" decoding="async" />
+            </button>
+            <button class="gp-modal__thumb" type="button" data-gp-thumb data-gp-target="gp-modal-4-main"
+                    data-gp-src="images/proker/opt/sem-2-800.webp" data-gp-alt="Peserta webinar mengikuti sesi bersama narasumber Mortier" data-gp-width="800" data-gp-height="525"
+                    aria-label="Tampilkan foto peserta webinar" aria-pressed="false">
+              <img src="images/proker/opt/sem-2-400.webp" alt="Peserta webinar" width="400" height="262" loading="lazy" decoding="async" />
+            </button>
+            <button class="gp-modal__thumb" type="button" data-gp-thumb data-gp-target="gp-modal-4-main"
+                    data-gp-src="images/proker/opt/sem-3-800.webp" data-gp-alt="Sesi tanya jawab webinar Eco Talk bersama Mortier" data-gp-width="800" data-gp-height="525"
+                    aria-label="Tampilkan foto sesi tanya jawab" aria-pressed="false">
+              <img src="images/proker/opt/sem-3-400.webp" alt="Sesi tanya jawab webinar" width="400" height="262" loading="lazy" decoding="async" />
+            </button>
+          </div>
+        </div>
+        <div class="gp-modal__text">
+          <h2 id="gp-modal-4-title">Webinar GP X Mortier</h2>
+          <p>Webinar yang diadakan oleh Greenpact bersama Mortier, dan mengundang Kak Irene, salah satu founder Mortier sebagai narasumber. Pada webinar ini diajarkan tentang bagaimana Mortier mengolah sampah plastik menjadi produk yang dapat digunakan lagi. </p>
+          <h4>Key Highlights</h4>
+          <ul class="gp-program-highlights">
+            <li>GP X Mortier</li>
+            <li>Webinar Edukatif</li>
+            <li>Pengolahan Sampah</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="gp-modal" id="gp-modal-5" role="dialog" aria-modal="true" aria-labelledby="gp-modal-5-title" data-gp-modal-overlay hidden>
+      <div class="gp-modal__panel" tabindex="-1">
+        <button class="gp-modal__close" type="button" data-gp-modal-close aria-label="Tutup dialog Pengunjungan Pabrik Mortier">&times;</button>
+        <div class="gp-modal__media">
+          <div class="gp-modal__main">
+            <img id="gp-modal-5-main" src="images/proker/opt/pab-1-800.webp"
+                 alt="Peserta Greenpact berfoto bersama saat kunjungan ke pabrik Mortier"
+                 width="800" height="533" loading="lazy" decoding="async" />
+          </div>
+          <div class="gp-modal__thumbs" role="group" aria-label="Foto Pengunjungan Pabrik Mortier">
+            <button class="gp-modal__thumb is-active" type="button" data-gp-thumb data-gp-target="gp-modal-5-main"
+                    data-gp-src="images/proker/opt/pab-1-800.webp" data-gp-alt="Peserta Greenpact berfoto bersama saat kunjungan ke pabrik Mortier" data-gp-width="800" data-gp-height="533"
+                    aria-label="Tampilkan foto bersama peserta kunjungan" aria-pressed="true">
+              <img src="images/proker/opt/pab-1-400.webp" alt="Peserta kunjungan pabrik Mortier" width="400" height="267" loading="lazy" decoding="async" />
+            </button>
+            <button class="gp-modal__thumb" type="button" data-gp-thumb data-gp-target="gp-modal-5-main"
+                    data-gp-src="images/proker/opt/pab-2-800.webp" data-gp-alt="Narasumber menjelaskan proses pengolahan plastik kepada peserta Greenpact" data-gp-width="800" data-gp-height="533"
+                    aria-label="Tampilkan foto penjelasan proses pengolahan plastik" aria-pressed="false">
+              <img src="images/proker/opt/pab-2-400.webp" alt="Penjelasan proses pengolahan plastik" width="400" height="267" loading="lazy" decoding="async" />
+            </button>
+            <button class="gp-modal__thumb" type="button" data-gp-thumb data-gp-target="gp-modal-5-main"
+                    data-gp-src="images/proker/opt/plastic-flake-800.webp" data-gp-alt="Cacahan plastik berwarna hasil proses daur ulang di pabrik Mortier" data-gp-width="800" data-gp-height="533"
+                    aria-label="Tampilkan foto cacahan plastik hasil daur ulang" aria-pressed="false">
+              <img src="images/proker/opt/plastic-flake-400.webp" alt="Cacahan plastik hasil daur ulang" width="400" height="266" loading="lazy" decoding="async" />
+            </button>
+          </div>
+        </div>
+        <div class="gp-modal__text">
+          <h2 id="gp-modal-5-title">Pengunjungan Pabrik Mortier</h2>
+          <p>Greenpact mengunjungi langsung pabrik mortier yang ada di bekasi untuk belajar dan mencoba bagaimana mendaur ulang sampah-sampah plastik menjadi barang yang berfungsi. Tim greenpact belajar membuat cardholder, carabiner dari sampah plastik</p>
+          <h4>Key Highlights</h4>
+          <ul class="gp-program-highlights">
+            <li>Pabrik Mortier</li>
+            <li>Belajar Mendaur Ulang Sampah</li>
+            <li>Pengolahan Plastik Menjadi Barang</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="gp-modal" id="gp-modal-6" role="dialog" aria-modal="true" aria-labelledby="gp-modal-6-title" data-gp-modal-overlay hidden>
+      <div class="gp-modal__panel" tabindex="-1">
+        <button class="gp-modal__close" type="button" data-gp-modal-close aria-label="Tutup dialog Pameran bukantentangsampah">&times;</button>
+        <div class="gp-modal__media">
+          <div class="gp-modal__main">
+            <img id="gp-modal-6-main" src="images/proker/opt/bottle-installation-800.webp"
+                 alt="Instalasi botol plastik pada pameran bukantentangsampah di Erasmus Huis"
+                 width="800" height="897" loading="lazy" decoding="async" />
+          </div>
+          <div class="gp-modal__thumbs" role="group" aria-label="Foto Pameran bukantentangsampah">
+            <button class="gp-modal__thumb is-active" type="button" data-gp-thumb data-gp-target="gp-modal-6-main"
+                    data-gp-src="images/proker/opt/bottle-installation-800.webp" data-gp-alt="Instalasi botol plastik pada pameran bukantentangsampah di Erasmus Huis" data-gp-width="800" data-gp-height="897"
+                    aria-label="Tampilkan foto instalasi botol plastik" aria-pressed="true">
+              <img src="images/proker/opt/bottle-installation-400.webp" alt="Instalasi botol plastik di Erasmus Huis" width="400" height="448" loading="lazy" decoding="async" />
+            </button>
+            <button class="gp-modal__thumb" type="button" data-gp-thumb data-gp-target="gp-modal-6-main"
+                    data-gp-src="images/proker/opt/eras-2-800.webp" data-gp-alt="Tim mempresentasikan karya di depan instalasi botol pameran" data-gp-width="800" data-gp-height="1067"
+                    aria-label="Tampilkan foto presentasi di area pameran" aria-pressed="false">
+              <img src="images/proker/opt/eras-2-400.webp" alt="Presentasi di area pameran" width="400" height="533" loading="lazy" decoding="async" />
+            </button>
+            <button class="gp-modal__thumb" type="button" data-gp-thumb data-gp-target="gp-modal-6-main"
+                    data-gp-src="images/proker/opt/eras-3-800.webp" data-gp-alt="Anggota Greenpact berfoto bersama di pameran bukantentangsampah" data-gp-width="800" data-gp-height="1067"
+                    aria-label="Tampilkan foto bersama anggota di pameran" aria-pressed="false">
+              <img src="images/proker/opt/eras-3-400.webp" alt="Anggota Greenpact di pameran bukantentangsampah" width="400" height="533" loading="lazy" decoding="async" />
+            </button>
+          </div>
+        </div>
+        <div class="gp-modal__text">
+          <h2 id="gp-modal-6-title">Pameran bukantentangsampah</h2>
+          <p>Greenpact diundang untuk datang ke pameran yang diadakan oleh tim “bukantentangsampah” di Erasmus Huis. Pada pameran ini Greenpact diajak bermain kartu tentang daur ulang, dan belajar tentang bagaimana kondisi sampah dan lingkungan sekitar kita.</p>
+          <h4>Key Highlights</h4>
+          <ul class="gp-program-highlights">
+            <li>Pameran di Erasmus Huis</li>
+            <li>Diadakan tim "bukantentangsampah"</li>
+            <li>Kondisi sampah dan lingkungan sekitar kita</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer class="gp-foot">
+      <div class="gp-check" aria-hidden="true"></div>
+      <div class="gp-foot__in">
+        <div class="gp-foot__brand">
+          <img class="gp-foot__sil" src="images/logo-silhouette-200.webp"
+               srcset="images/logo-silhouette-200.webp 1x, images/logo-silhouette-400.webp 2x"
+               alt="Greenpact Society" width="200" height="236" loading="lazy" decoding="async" />
+          <p class="gp-foot__tagline">From us, to nature</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="program.html">Program</a></li>
+            <li><a href="products.html">Merch</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <ul>
+            <li>Email: <a href="mailto:greenpact.society@gmail.com">greenpact.society@gmail.com</a></li>
+            <li>Phone: <a href="tel:+6281197200097">+62 811-9720-097</a></li>
+            <li>Instagram: <a href="https://www.instagram.com/greenpact.society/" target="_blank" rel="noopener">@greenpact.society</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="gp-foot__bottom"><p>&copy; 2026 Greenpact Society. All rights reserved.</p></div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="app.js"></script>
-    <script>
-      function openModal(modalId) {
-        const modal = document.getElementById(modalId);
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-        // Check scroll indicator on open
-        setTimeout(() => checkScrollIndicator(modalId), 100);
-        // Add scroll event listener for indicator
-        const modalContent = modal.querySelector('.modal-content');
-        if (modalContent) {
-          modalContent.addEventListener('scroll', () => checkScrollIndicator(modalId));
-        }
-      }
-
-      function closeModal(modalId) {
-        const modal = document.getElementById(modalId);
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        // Remove scroll event listener
-        const modalContent = modal.querySelector('.modal-content');
-        if (modalContent) {
-          modalContent.removeEventListener('scroll', () => checkScrollIndicator(modalId));
-        }
-      }
-      // Show/hide scroll indicator if modal content is scrollable and not at bottom
-      function checkScrollIndicator(modalId) {
-        const modal = document.getElementById(modalId);
-        const modalContent = modal.querySelector('.modal-content');
-        const indicator = modalContent ? modalContent.querySelector('.modal-scroll-indicator') : null;
-        if (!modalContent || !indicator) return;
-        const visible = modalContent.clientHeight;
-        const total = modalContent.scrollHeight;
-        // Show if scrollable and not at bottom, with a lower threshold for more frequent appearance
-        if (total - visible > 30 && modalContent.scrollTop < (total - visible - 10)) {
-          indicator.style.display = 'flex';
-        } else {
-          indicator.style.display = 'none';
-        }
-      }
-
-      // Change main image when clicking thumbnail
-      function changeMainImage(mainImgId, thumbElement) {
-        const mainImg = document.getElementById(mainImgId);
-        const newSrc = thumbElement.querySelector('img').src;
-        mainImg.src = newSrc;
-
-        // Update active state
-        const container = thumbElement.parentElement;
-        container.querySelectorAll('.thumb-item').forEach(item => item.classList.remove('active'));
-        thumbElement.classList.add('active');
-      }
-
-      // Close modal when clicking outside of it
-      window.onclick = function(event) {
-        if (event.target.classList.contains('modal')) {
-          event.target.style.display = 'none';
-          document.body.style.overflow = 'auto';
-        }
-      }
-
-      // Close modal with Escape key
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-          const modals = document.querySelectorAll('.modal');
-          modals.forEach(modal => {
-            if (modal.style.display === 'block') {
-              modal.style.display = 'none';
-              document.body.style.overflow = 'auto';
-            }
-          });
-        }
-      });
-
-      // On DOMContentLoaded, add scroll indicator inside modal-content for all modals
-      document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('.modal').forEach(modal => {
-          const modalContent = modal.querySelector('.modal-content');
-          if (modalContent && !modalContent.querySelector('.modal-scroll-indicator')) {
-            const indicator = document.createElement('div');
-            indicator.className = 'modal-scroll-indicator';
-            indicator.innerHTML = '<span class="arrow-down"></span>';
-            modalContent.appendChild(indicator);
-          }
-        });
-      });
-    </script>
-
-    <script>
-      (function () {
-        const header = document.querySelector('header');
-        const navbar = document.querySelector('.navbar');
-        const rightContainer = document.querySelector('.right-container');
-        const toggleBtn = document.querySelector('.toggle_btn');
-        const dropdown = document.querySelector('.dropdown_menu');
-        if (!header || !navbar || !rightContainer || !toggleBtn || !dropdown) return;
-
-        const onScroll = () => {
-          const scrolled = window.scrollY > 50;
-          header.classList.toggle('scrolled', scrolled);
-          navbar.classList.toggle('scrolled', scrolled);
-          rightContainer.classList.toggle('scrolled', scrolled);
-        };
-        window.addEventListener('scroll', onScroll);
-        onScroll();
-
-        toggleBtn.addEventListener('click', () => {
-          dropdown.classList.toggle('open');
-        });
-        dropdown.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
-          dropdown.classList.remove('open');
-        }));
-      })();
-    </script>
+    <script src="js/program.js"></script>
   </body>
 </html>

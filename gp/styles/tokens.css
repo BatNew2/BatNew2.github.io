@@ -1,0 +1,47 @@
+/* Greenpact design tokens — the real ones.
+   Replaces the ad-hoc :root in GreenpactWeb/css/style.css, which is the legacy
+   stylesheet and is still loaded for its other rules.
+
+   Palette derived from the two society t-shirts (2026-08-19). Hex values were read
+   off photographs, not sampled from print artwork — replace with the print values
+   when they are available. Every ratio below computed with
+   ~/design-library/_shared/tools/contrast.py (WCAG 2.1). */
+
+@font-face{font-family:'Instrument Serif';src:url('../fonts/InstrumentSerif-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Switzer';src:url('../fonts/Switzer-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Switzer';src:url('../fonts/Switzer-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Anton';src:url('../fonts/Anton.woff2') format('woff2');font-weight:400;font-display:swap}
+
+:root{
+  /* ---- ground + ink ---- */
+  --gp-sand:#e9e1d0;        /* the beige tee — primary ground */
+  --gp-sand-deep:#ddd3bd;   /* alternating band */
+  --gp-ink:#1a1c17;         /* 13.21 on sand — AAA */
+  --gp-forest:#234534;      /* 8.19 on sand — AAA */
+  --gp-forest-deep:#14301f;
+  --gp-slate:#4e565b;       /* the charcoal tee */
+
+  /* ---- accent ---- */
+  --gp-red:#8c1a1d;         /* 7.08 on sand — AAA. Numerals, labels, closing band. */
+  --gp-red-bright:#9d1f22;  /* 6.09 on sand — AA. Large display only. */
+  --gp-gold:#d6bb99;        /* 5.79 on --gp-forest — AA */
+  --gp-check:#2f7d4e;       /* 3.88 on sand — FAILS AA.
+                               GRAPHIC ONLY: the checkerboard rule, never text.
+                               This is how the shirt uses it too. */
+
+  /* ---- type ---- */
+  --gp-serif:'Instrument Serif',Georgia,serif;   /* every heading level */
+  --gp-sans:'Switzer',system-ui,-apple-system,sans-serif;  /* all body copy */
+  --gp-display:'Anton',Impact,sans-serif;        /* LOCKUP + labels ONLY.
+                                                    Never a heading, never body. */
+
+  /* ---- space ---- */
+  --gp-gut:clamp(1.25rem,4vw,4rem);
+  --gp-maxw:1240px;
+  --gp-nav:86px;
+  --gp-nav-stuck:66px;
+
+  /* ---- motion: two curves, both measured off age-of-union ---- */
+  --gp-ease-ui:cubic-bezier(.215,.61,.355,1);
+  --gp-ease-reveal:cubic-bezier(.38,.005,.215,1);
+}
