@@ -141,7 +141,7 @@ html.gp-js .gp-program-hero.is-open .gp-program-hero__visual{clip-path:inset(0);
   line-height:.82;letter-spacing:-.035em}
 .gp-program-cta p{max-width:52ch;margin-top:clamp(1.25rem,3vh,2rem);line-height:1.65;text-wrap:pretty}
 .gp-program-cta__actions{display:flex;align-items:center;gap:clamp(1.25rem,3vw,2.25rem);margin-top:clamp(1.5rem,4vh,2.5rem)}
-.gp-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.8rem 1.8rem;
+a.gp-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.8rem 1.8rem;
   font-weight:500;color:var(--gp-forest-deep);background:var(--gp-sand);
   transition:transform .15s var(--gp-ease-ui),opacity .15s var(--gp-ease-ui)}
 .gp-btn:hover{transform:translateY(-2px)}
