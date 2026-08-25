@@ -188,6 +188,15 @@ a.gp-btn{display:inline-flex;align-items:center;justify-content:center;min-heigh
 .gp-modal__text p{max-width:60ch;margin-top:1.4rem;line-height:1.68;text-wrap:pretty}
 .gp-modal__text h4{margin:clamp(1.5rem,4vh,2.5rem) 0 .55rem;font-family:var(--gp-display);
   font-size:.68rem;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--gp-red)}
+p.gp-modal__meta{margin:0 0 .4rem;font-family:var(--gp-display);font-size:.62rem;font-weight:400;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--gp-forest);opacity:.72}
+p.gp-modal__subtitle{max-width:36ch;margin-top:.5rem;font-family:var(--gp-serif);font-style:italic;
+  font-size:1.15rem;line-height:1.3;color:var(--gp-forest)}
+p.gp-modal__speaker-name{margin-top:1.4rem;font-weight:600}
+p.gp-modal__speaker-title{margin-top:.15rem;font-family:var(--gp-display);font-size:.64rem;
+  font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--gp-forest);opacity:.72}
+p.gp-modal__tagline{max-width:none;margin-top:2rem;font-family:var(--gp-serif);font-style:italic;
+  font-size:1.3rem;line-height:1.35;color:var(--gp-forest)}
 .gp-program-highlights li{position:relative;padding:.55rem 0 .55rem 1.15rem;border-top:1px solid rgba(26,28,23,.14);font-size:.9rem}
 .gp-program-highlights li::before{position:absolute;top:1.05rem;left:0;width:6px;height:6px;content:"";background:var(--gp-check)}
 .gp-modal__media--type{padding:clamp(1.5rem,4vw,3.5rem)}
