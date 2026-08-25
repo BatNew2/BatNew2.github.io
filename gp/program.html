@@ -22,13 +22,24 @@
   </head>
 
   <body class="gp-body">
-    <div id="gp-pl">
-      <div>
-        <img src="images/logo-wood-440.webp" alt="Greenpact Society" width="440" height="586" />
-        <div class="gp-pl__rule" aria-hidden="true"></div>
-        <p class="gp-pl__tagline">From us, to nature</p>
+    <div class="preloader" id="preloader" aria-hidden="true">
+      <div class="preloader__inner">
+        <img class="preloader__logo" src="images/logo-wood-440.webp" alt="" />
+        <div class="preloader__bar"><span></span></div>
+        <p class="preloader__word">From us, to nature</p>
       </div>
     </div>
+    <script>
+      (function () {
+        var preloader = document.getElementById('preloader');
+        if (!preloader) return;
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var dismiss = function () { preloader.classList.add('is-done'); };
+        if (reduceMotion) { dismiss(); return; }
+        window.addEventListener('load', function () { setTimeout(dismiss, 1200); });
+        setTimeout(dismiss, 4000);
+      })();
+    </script>
 
     <header class="w-100 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between mb-4">
       <nav class="w-100 navbar navbar-expand-lg  navbar-custom bottom-border">
