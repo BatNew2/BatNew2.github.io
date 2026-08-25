@@ -11,6 +11,7 @@ body.gp-body{margin:0;background:var(--gp-sand);color:var(--gp-ink);
 .gp-body ul{padding:0;list-style:none}
 .gp-body a{color:inherit;text-decoration:none}
 .gp-body button{font:inherit}
+.navbar .nav-link{color:#fff}
 
 .gp-sec{position:relative;height:100svh;min-height:0;overflow:hidden}
 .gp-label{font-family:var(--gp-display);font-size:clamp(.62rem,.15vw + .58rem,.72rem);
